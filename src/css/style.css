@@ -49,3 +49,114 @@ large : 10
 
 5. White Spaces
 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #333;
+
+  font-size: 1.6rem;
+}
+
+.app {
+  border: 1px solid black;
+  max-width: 120rem;
+  max-height: 120rem;
+  padding: 2.4rem;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+  gap: 4.8rem;
+}
+
+/* ------------------------------ */
+/* ----------Navigation---------- */
+/* ------------------------------ */
+li {
+  list-style: none;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  gap: 2.4rem;
+
+  max-width: 20rem;
+  border: 1px solid #f1f3f5;
+  padding: 1.2rem 2.4rem;
+}
+
+.nav__main {
+  gap: 1.2rem;
+}
+
+.nav__main-list,
+.nav__tags,
+.nav__main-non-add {
+  gap: 0.8rem;
+}
+
+.nav__main-item {
+  max-width: 15rem;
+  border: 1px solid #f1f3f5;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.add-contact {
+  background-color: #2187af;
+}
+
+.add-contact a {
+  color: #fff;
+}
+
+/* ------------------------------ */
+/* ----------Contact List-------- */
+/* ------------------------------ */
+
+.main {
+  border: 1px solid #333;
+  padding: 5rem 2.4rem 1rem;
+}
+
+.main__head {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.secondary--heading {
+  font-size: 2.7rem;
+  font-weight: lighter;
+}
+
+.main__search-form {
+  border: 1px solid black;
+  max-width: 30rem;
+  padding: 4px 8px;
+}
+
+.label {
+  display: none;
+}
