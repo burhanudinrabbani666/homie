@@ -5,5 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <div class="app">
+      <header class="header">
+        <nav class="nav__main">
+          <h1>HOMIE</h1>
+          <ul class="nav__main-list">
+            <li class="nav__main-item add-contact">
+              <a href="#">Add Contact</a>
+            </li>
+            <div class="nav__main-non-add">
+              <li class="nav__main-item"><a href="#">Favorites</a></li>
+              <li class="nav__main-item"><a href="#">Trash</a></li>
+            </div>
+          </ul>
+        </nav>
+        <nav class="tags">
+          <ul class="nav__tags">
+            <h3>Tags</h3>
+            <li class="nav__main-item"><a href="#">Work</a></li>
+            <li class="nav__main-item"><a href="#">Study</a></li>
+            <li class="nav__main-item"><a href="#">Family</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main class="main">
+        <div class="main__head">
+          <div class="main__contact-total"></div>
+          <form method="post" class="main__searc-form">
+            <label for="search">Search</label>
+            <input
+              type="text"
+              id="search"
+              name="search"
+              class="main__search-fields"
+            />
+            <button>Search</button>
+          </form>
+        </div>
+        <div class="main__container">
+          <div class="main__container-title"></div>
+          <ul class="main__container-contacti-">
+            <li class="contact-list">
+              <div class="name">
+                <div class="img"></div>
+                <span>Burhanudin Rabbain</span>
+              </div>
+              <span>0812345567</span>
+              <span>bani@example.io</span>
+              <div class="tags">
+                <div class="tag">work</div>
+                <div class="tag">Family</div>
+              </div>
+              <div class="menu">
+                <button>Favorites</button>
+                <button>Detail</button>
+                <button>Edit</button>
+                <button>Delete</button>
+              </div>
+            </li>
+            <li class="contact-list">
+              <div class="name">
+                <div class="img"></div>
+                <span>Burhanudin Rabbain</span>
+              </div>
+              <span>0812345567</span>
+              <span>bani@example.io</span>
+              <div class="tags">
+                <div class="tag">work</div>
+                <div class="tag">Family</div>
+              </div>
+              <div class="menu">
+                <button>Favorites</button>
+                <button>Detail</button>
+                <button>Edit</button>
+                <button>Delete</button>
+              </div>
+            </li>
+          </ul>
+          list
+        </div>
+      </main>
+    </div>
+  </body>
 </html>
