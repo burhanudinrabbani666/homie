@@ -12,21 +12,49 @@
         <nav class="nav__main flex-col">
           <h1>HOMIE</h1>
           <ul class="nav__main-list flex-col">
-            <li class="nav__main-item add-contact">
-              <a href="#">Add Contact</a>
+            <li>
+              <a class="nav__main-item add-contact" href="#">
+                <ion-icon name="add-outline"></ion-icon>
+                <p class="main-item-text">Add Contact</p></a
+              >
             </li>
             <div class="nav__main-non-add flex-col">
-              <li class="nav__main-item"><a href="#">Favorites</a></li>
-              <li class="nav__main-item"><a href="#">Trash</a></li>
+              <li>
+                <a class="nav__main-item" href="#">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <p class="main-item-text">Favorites</p>
+                </a>
+              </li>
+              <li>
+                <a class="nav__main-item" href="#">
+                  <ion-icon name="trash-outline"></ion-icon>
+                  <p class="main-item-text">Trash</p>
+                </a>
+              </li>
             </div>
           </ul>
         </nav>
         <nav class="tags">
           <ul class="nav__tags flex-col">
             <h3>Tags</h3>
-            <li class="nav__main-item"><a href="#">Work</a></li>
-            <li class="nav__main-item"><a href="#">Study</a></li>
-            <li class="nav__main-item"><a href="#">Family</a></li>
+            <li>
+              <a class="nav__main-item" href="#"
+                ><div class="item-color label-color-red"></div>
+                <span class="item-label">Work</span></a
+              >
+            </li>
+            <li>
+              <a class="nav__main-item" href="#"
+                ><div class="item-color label-color-blue"></div>
+                <span class="item-label">Study</span></a
+              >
+            </li>
+            <li>
+              <a class="nav__main-item" href="#"
+                ><div class="item-color label-color-green"></div>
+                <span class="item-label">Family</span></a
+              >
+            </li>
           </ul>
         </nav>
       </header>
@@ -35,63 +63,95 @@
         <div class="main__head">
           <span class="secondary--heading">Contact (2)</span>
           <div class="main__search-form">
-            <form method="post">
+            <form method="post" class="form-container">
               <label for="search" class="label">Search</label>
               <input
                 type="text"
                 id="search"
                 name="search"
                 class="main__search-fields"
+                placeholder="Search..."
               />
-              <button>Search</button>
+              <button>
+                <ion-icon name="search-outline"></ion-icon>
+              </button>
             </form>
           </div>
         </div>
         <div class="main__container">
-          <div class="main__container-title"></div>
-          <ul class="main__container-contacti-">
-            <li class="contact-list">
+          <div class="main__container-title grid-4-col">
+            <p>Name</p>
+            <p>Phone</p>
+            <p>Email</p>
+            <p>Tags</p>
+            <p></p>
+          </div>
+          <ul class="main__container-contact">
+            <li class="contact-list grid-4-col">
               <div class="name">
                 <div class="img"></div>
-                <span>Burhanudin Rabbain</span>
+                <p>Burhanudin Rabbani</p>
               </div>
-              <span>0812345567</span>
-              <span>bani@example.io</span>
+              <p>0812345567</p>
+              <p>bani@example.io</p>
               <div class="tags">
-                <div class="tag">work</div>
-                <div class="tag">Family</div>
+                <div class="tag label-color-red">work</div>
+                <div class="tag label-color-green">Family</div>
               </div>
               <div class="menu">
-                <button>Favorites</button>
-                <button>Detail</button>
-                <button>Edit</button>
-                <button>Delete</button>
+                <button>
+                  <ion-icon name="eye-outline"></ion-icon>
+                </button>
+                <button>
+                  <ion-icon name="star-outline"></ion-icon>
+                </button>
+                <button>
+                  <ion-icon name="pencil-outline"></ion-icon>
+                </button>
+                <button>
+                  <ion-icon name="trash-outline"></ion-icon>
+                </button>
               </div>
             </li>
-            <li class="contact-list">
+            <li class="contact-list grid-4-col">
               <div class="name">
                 <div class="img"></div>
-                <span>Burhanudin Rabbain</span>
+                <span>Burhanudin Rabbani</span>
               </div>
               <span>0812345567</span>
               <span>bani@example.io</span>
               <div class="tags">
-                <div class="tag">work</div>
-                <div class="tag">Family</div>
+                <div class="tag label-color-green">Family</div>
+                <div class="tag label-color-blue">study</div>
               </div>
               <div class="menu">
-                <button>Favorites</button>
-                <button>Detail</button>
-                <button>Edit</button>
-                <button>Delete</button>
+                <button>
+                  <ion-icon name="eye-outline"></ion-icon>
+                </button>
+                <button>
+                  <ion-icon name="star-outline"></ion-icon>
+                </button>
+                <button>
+                  <ion-icon name="pencil-outline"></ion-icon>
+                </button>
+                <button>
+                  <ion-icon name="trash-outline"></ion-icon>
+                </button>
               </div>
             </li>
           </ul>
-          list
         </div>
       </main>
     </div>
 
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <script type="module" src="/src/js/controller.js"></script>
   </body>
 </html>
