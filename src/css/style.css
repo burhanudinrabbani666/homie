@@ -103,7 +103,7 @@ a {
 
   max-width: 20rem;
   border: 1px solid #d7d9db;
-  border-radius: 10px;
+  border-radius: 1rem;
 
   padding: 1.2rem 2.4rem;
 }
@@ -121,8 +121,8 @@ a {
 .nav__main-item {
   max-width: 15rem;
   border: 1px solid #f1f3f5;
-  padding: 8px 12px;
-  border-radius: 4px;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.4rem;
 
   display: flex;
   gap: 0.8rem;
@@ -264,11 +264,16 @@ ion-icon {
 
   background-color: #8ad3fc;
 }
+/* --------------------------- */
+/* Contact container */
+/* --------------------------- */
 
 .contact-list {
   padding: 2rem 1.6rem;
   border: 1px solid rgba(52, 58, 64, 0.2);
   border-radius: 1rem;
+
+  position: relative;
 }
 
 .tags {
@@ -286,10 +291,14 @@ ion-icon {
   flex-direction: column;
   gap: 0.8rem;
 
-  padding: 0.8rem;
+  padding: 1rem;
 
   border: 1px solid #d7d9db;
-  border-radius: 4px;
+  border-radius: 1rem;
+  position: absolute;
+  right: 10px;
+
+  background-color: #fff;
 }
 
 .menu-item {
@@ -302,4 +311,13 @@ ion-icon {
   background-color: #fff;
   border: 1px solid #d7d9db;
   border-radius: 4px;
+}
+
+.menu-item:hover,
+.menu-item:active {
+  background-color: #d7d9db;
+}
+
+.hidden {
+  display: none;
 }

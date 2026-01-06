@@ -1,0 +1,62 @@
+import { contactsElement, tagsElement } from "./controller";
+
+export function renderLabels(labels) {
+  const tagHtml = labels.map((label) => {
+    return `
+      <li>
+        <a class="nav__main-item" href="#${label.id}"
+          ><div class="item-color label-color-${label.color}"></div>
+          <span class="item-label">${label.labelName}</span></a
+        >
+      </li>
+
+    `;
+  });
+
+  return (tagsElement.innerHTML = tagHtml.join(""));
+}
+
+export function renderContact(initialData) {
+  console.log(initialData);
+
+  const html = initialData.map((contact) => {
+    return `
+     <li class="contact-list grid-4-col">
+       <div class="name">
+         <div class="img"></div>
+         <p>${contact.name}</p>
+       </div>
+       <p> ${contact.phone}</p>
+       <p>${contact.email}</p>
+       <div class="tags">
+         <div class="tag label-color-red">work</div>
+         <div class="tag label-color-green">Family</div>
+       </div>
+       <div class="menu-container">
+         <ion-icon name="star-outline"></ion-icon>
+       </div>
+       <div class="menu hidden">
+         <a href="#" class="menu-item">
+           <ion-icon name="eye-outline"></ion-icon>
+           <span>View Detail</span>
+         </a>
+         <button class="menu-item">
+           <ion-icon name="star-outline"></ion-icon>
+           <span>Favorites</span>
+         </button>
+         <button class="menu-item">
+           <ion-icon name="pencil-outline"></ion-icon>
+           <span>Edit Contact</span>
+         </button>
+         <button class="menu-item">
+           <ion-icon name="trash-outline"></ion-icon>
+           <span>Delete</span>
+         </button>
+       </div>
+     </li>
+
+    `;
+  });
+
+  return (contactsElement.innerHTML = html);
+}
