@@ -46,7 +46,7 @@ export function renderContact(initialData) {
            <ion-icon name="pencil-outline"></ion-icon>
            <span>Edit Contact</span>
          </button>
-         <button class="menu-item">
+         <button class="menu-item delete-btn" data-id=${contact.id}>
            <ion-icon name="trash-outline"></ion-icon>
            <span>Delete</span>
          </button>

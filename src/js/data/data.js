@@ -11,7 +11,7 @@ export const initialLabels = [
   },
 ];
 
-export const initialData = [
+export let initialData = [
   {
     id: "1",
     name: "Burhanudin Rabbani",

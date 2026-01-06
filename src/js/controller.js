@@ -13,10 +13,22 @@ function app(initialData, initialLabels) {
 
   contactsElement.addEventListener("click", (event) => {
     const menuBtn = event.target.closest(".menu-btn");
-    console.log(menuBtn.dataset.id);
+    const deleteBtn = event.target.closest(".delete-btn");
+
     if (menuBtn) {
       const menuElement = document.querySelector(".menu");
       menuElement.classList.toggle("hidden");
+    }
+
+    if (deleteBtn) {
+      const dataId = deleteBtn.dataset.id;
+      const newInitialData = initialData.filter(
+        (contact) => contact.id !== dataId
+      );
+
+      initialData = newInitialData;
+
+      renderContact(initialData);
     }
   });
 }
