@@ -296,7 +296,8 @@ ion-icon {
   border: 1px solid #d7d9db;
   border-radius: 1rem;
   position: absolute;
-  right: 10px;
+  right: 5rem;
+  top: -14.3rem;
 
   background-color: #fff;
 }

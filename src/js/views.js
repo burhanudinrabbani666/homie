@@ -32,9 +32,7 @@ export function renderContact(initialData) {
          <div class="tag label-color-red">work</div>
          <div class="tag label-color-green">Family</div>
        </div>
-       <div class="menu-container">
-         <ion-icon name="star-outline"></ion-icon>
-       </div>
+       <button class="menu-btn" data-id=${contact.id}>X</button>
        <div class="menu hidden">
          <a href="#" class="menu-item">
            <ion-icon name="eye-outline"></ion-icon>

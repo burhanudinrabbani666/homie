@@ -10,6 +10,15 @@ export const contactsElement = document.querySelector(
 function app(initialData, initialLabels) {
   renderLabels(initialLabels);
   renderContact(initialData);
+
+  contactsElement.addEventListener("click", (event) => {
+    const menuBtn = event.target.closest(".menu-btn");
+    console.log(menuBtn.dataset.id);
+    if (menuBtn) {
+      const menuElement = document.querySelector(".menu");
+      menuElement.classList.toggle("hidden");
+    }
+  });
 }
 
 app(initialData, initialLabels);
