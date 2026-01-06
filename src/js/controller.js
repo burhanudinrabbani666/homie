@@ -11,27 +11,37 @@ function app(initialData, initialLabels) {
   renderLabels(initialLabels);
   renderContact(initialData);
 
-  const contactListElement = document.querySelectorAll(".contact-list");
-  console.log(contactListElement);
+  contactsElement.addEventListener("click", (event) => {
+    const menuBtn = event.target.closest(".menu-btn");
+    const deleteBtn = event.target.closest(".delete-btn");
+    const favoriteBtn = event.target.closest(".favorite-btn");
 
-  contactListElement.forEach((contact) => {
-    contact.addEventListener("click", (event) => {
-      const menuBtn = event.target.closest(".menu-btn");
-      const deleteBtn = event.target.closest(".delete-btn");
-      const favoriteBtn = event.target.closest(".favorite-btn");
+    if (menuBtn) {
+      const menuElement = document.querySelector(`.menu-${menuBtn.dataset.id}`);
+      menuElement.classList.toggle("hidden");
+    }
 
-      console.log(favoriteBtn);
-      console.log(deleteBtn);
-      if (menuBtn) {
-        const menuElement = document.querySelector(
-          `.menu-${menuBtn.dataset.id}`
-        );
-        menuElement.classList.toggle("hidden");
-      }
-    });
+    if (deleteBtn) {
+      const dataId = Number(deleteBtn.dataset.id);
+      initialData = initialData.filter((contact) => contact.id !== dataId);
+
+      renderContact(initialData);
+      return;
+    }
+
+    if (favoriteBtn) {
+      const dataId = Number(favoriteBtn.dataset.id);
+
+      initialData = initialData.map((contact) =>
+        contact.id === dataId
+          ? { ...contact, favorites: !contact.favorites }
+          : contact
+      );
+
+      renderContact(initialData);
+      return;
+    }
   });
-  // contactsElement.addEventListener("click", (event) => {
-  // });
 }
 
 app(initialData, initialLabels);

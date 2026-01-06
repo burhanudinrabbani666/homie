@@ -91,7 +91,7 @@ export function renderContact(initialData) {
     }
   });
 
-  return (contactsElement.innerHTML = html.join(""));
+  contactsElement.innerHTML = html.join("");
 }
 
 export function menuBtn() {
