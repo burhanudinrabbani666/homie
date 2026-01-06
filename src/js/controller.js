@@ -11,26 +11,27 @@ function app(initialData, initialLabels) {
   renderLabels(initialLabels);
   renderContact(initialData);
 
-  contactsElement.addEventListener("click", (event) => {
-    const menuBtn = event.target.closest(".menu-btn");
-    const deleteBtn = event.target.closest(".delete-btn");
+  const contactListElement = document.querySelectorAll(".contact-list");
+  console.log(contactListElement);
 
-    if (menuBtn) {
-      const menuElement = document.querySelector(".menu");
-      menuElement.classList.toggle("hidden");
-    }
+  contactListElement.forEach((contact) => {
+    contact.addEventListener("click", (event) => {
+      const menuBtn = event.target.closest(".menu-btn");
+      const deleteBtn = event.target.closest(".delete-btn");
+      const favoriteBtn = event.target.closest(".favorite-btn");
 
-    if (deleteBtn) {
-      const dataId = deleteBtn.dataset.id;
-      const newInitialData = initialData.filter(
-        (contact) => contact.id !== dataId
-      );
-
-      initialData = newInitialData;
-
-      renderContact(initialData);
-    }
+      console.log(favoriteBtn);
+      console.log(deleteBtn);
+      if (menuBtn) {
+        const menuElement = document.querySelector(
+          `.menu-${menuBtn.dataset.id}`
+        );
+        menuElement.classList.toggle("hidden");
+      }
+    });
   });
+  // contactsElement.addEventListener("click", (event) => {
+  // });
 }
 
 app(initialData, initialLabels);
