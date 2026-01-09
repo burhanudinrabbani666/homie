@@ -45,11 +45,26 @@ function app(initialData, initialLabels) {
 
   window.addEventListener("hashchange", () => {
     const labelToRender = window.location.hash.slice(1);
+
+    // Render Favorites
+    if (labelToRender === "favorites") {
+      const favoritedContact = initialData.filter(
+        (contact) => contact.favorites === true
+      );
+
+      renderContact(favoritedContact);
+      return;
+    }
+
+    // Render Contact By tag
     const contactToRender = initialData.filter((contact) =>
       contact.labels.map((label) => label.labelName).includes(labelToRender)
     );
+    if (contactToRender.length === 0)
+      return alert("no contact with this label");
 
     renderContact(contactToRender);
+    return;
   });
 }
 
