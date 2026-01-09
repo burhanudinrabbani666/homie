@@ -1,13 +1,23 @@
 export const initialLabels = [
   {
     id: "1",
-    labelName: "Work",
+    labelName: "work",
     color: "red",
   },
   {
     id: "2",
-    labelName: "Family",
+    labelName: "family",
     color: "green",
+  },
+  {
+    id: "3",
+    labelName: "sport",
+    color: "blue",
+  },
+  {
+    id: "4",
+    labelName: "gamers",
+    color: "blue  ",
   },
 ];
 

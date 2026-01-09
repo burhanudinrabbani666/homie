@@ -4,7 +4,7 @@ export function renderLabels(labels) {
   const tagHtml = labels.map((label) => {
     return `
       <li>
-        <a class="nav__main-item" href="#${label.id}"
+        <a class="nav__main-item" href="#${label.labelName.toLowerCase()}"
           ><div class="item-color label-color-${label.color}"></div>
           <span class="item-label">${label.labelName}</span></a
         >

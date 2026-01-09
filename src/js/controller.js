@@ -42,6 +42,15 @@ function app(initialData, initialLabels) {
       return;
     }
   });
+
+  window.addEventListener("hashchange", () => {
+    const labelToRender = window.location.hash.slice(1);
+    const contactToRender = initialData.filter((contact) =>
+      contact.labels.map((label) => label.labelName).includes(labelToRender)
+    );
+
+    renderContact(contactToRender);
+  });
 }
 
 app(initialData, initialLabels);

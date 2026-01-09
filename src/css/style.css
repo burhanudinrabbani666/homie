@@ -306,6 +306,10 @@ ion-icon {
   background-color: #fff;
 }
 
+.menu-btn {
+  padding: 0.8rem 0;
+}
+
 .menu-item {
   display: flex;
   justify-items: center;
