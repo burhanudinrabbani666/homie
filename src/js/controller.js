@@ -12,8 +12,15 @@ function app(initialData, initialLabels) {
   renderLabels(initialLabels);
   renderContact(initialData);
 
-  const getParams = new URLSearchParams(window.location.search);
-  console.log(getParams.get("search"));
+  const getParams = new URLSearchParams(window.location.search).get("search");
+  if (getParams) {
+    const resultSearch = initialData.filter((contact) =>
+      contact.name.toLowerCase().includes(getParams.toLowerCase())
+    );
+
+    renderContact(resultSearch);
+    return;
+  }
 
   contactsElement.addEventListener("click", (event) => {
     const menuBtn = event.target.closest(".menu-btn");
@@ -70,11 +77,6 @@ function app(initialData, initialLabels) {
     renderContact(contactToRender);
     return;
   });
-
-  // searchField.addEventListener("submit", (event) => {
-  //   event.preventDefault();
-  //   window.location.href = "/?ler";
-  // });
 }
 
 app(initialData, initialLabels);
