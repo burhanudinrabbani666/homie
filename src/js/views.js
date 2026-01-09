@@ -32,8 +32,13 @@ export function renderContact(initialData) {
        <p> ${contact.phone}</p>
        <p>${contact.email}</p>
        <div class="tags">
-         <div class="tag label-color-red">work</div>
-         <div class="tag label-color-green">Family</div>
+        ${contact.labels
+          .map((label) => {
+            return `
+          <div class="tag label-color-${label.color}">${label.labelName}</div>
+          `;
+          })
+          .join("")}
        </div>
        <button class="menu-btn" data-id=${contact.id}>X</button>
        <div class="menu hidden menu-${contact.id}" data-id=${contact.id}>
