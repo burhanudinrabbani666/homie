@@ -6,10 +6,8 @@ export const tagsElement = document.querySelector(".nav__tags");
 export const contactsElement = document.querySelector(
   ".main__container-contact"
 );
-const searchField = document.querySelector(".form-container");
-
-function app(initialData, initialLabels) {
-  renderLabels(initialLabels);
+function app(initialData) {
+  renderLabels(initialData);
   renderContact(initialData);
 
   const getParams = new URLSearchParams(window.location.search).get("search");

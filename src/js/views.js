@@ -1,6 +1,14 @@
 import { contactsElement, tagsElement } from "./controller";
 
-export function renderLabels(labels) {
+export function renderLabels(initialData) {
+  const labelsArray = initialData.flatMap((contact) => contact.labels);
+  const labelJson = new Set(labelsArray.map((label) => JSON.stringify(label)));
+  const labels = Array.from(labelJson).map((labelUnique) =>
+    JSON.parse(labelUnique)
+  );
+
+  console.log(labels);
+
   const tagHtml = labels.map((label) => {
     return `
       <li>

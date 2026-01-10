@@ -27,7 +27,16 @@ export let initialData = [
     name: "Burhanudin Rabbani",
     phone: "081234678910",
     email: "example@example.com",
-    labels: [initialLabels[1], initialLabels[0]],
+    labels: [
+      {
+        labelName: "work",
+        color: "red",
+      },
+      {
+        labelName: "family",
+        color: "green",
+      },
+    ],
     birthDate: new Date(2002, 10, 14),
     address: {
       street: "Jl ki brajanata",
@@ -47,7 +56,12 @@ export let initialData = [
     name: "Ahmad Fauzi",
     phone: "081298765432",
     email: "ahmad.fauzi@example.com",
-    labels: [initialLabels[0]],
+    labels: [
+      {
+        labelName: "work",
+        color: "red",
+      },
+    ],
     birthDate: new Date(1998, 4, 21),
     address: {
       street: "Jl Merdeka Raya",
@@ -67,7 +81,12 @@ export let initialData = [
     name: "Siti Aisyah",
     phone: "082112345678",
     email: "siti.aisyah@example.com",
-    labels: [initialLabels[1]],
+    labels: [
+      {
+        labelName: "family",
+        color: "green",
+      },
+    ],
     birthDate: new Date(2000, 7, 3),
     address: {
       street: "Jl Sunan Gunung Jati",
@@ -87,7 +106,12 @@ export let initialData = [
     name: "Rizky Pratama",
     phone: "085712345999",
     email: "rizky.pratama@example.com",
-    labels: [initialLabels[2]],
+    labels: [
+      {
+        labelName: "sport",
+        color: "blue",
+      },
+    ],
     birthDate: new Date(1997, 1, 15),
     address: {
       street: "Jl Kartini",
@@ -107,7 +131,16 @@ export let initialData = [
     name: "Dewi Lestari",
     phone: "081355667788",
     email: "dewi.lestari@example.com",
-    labels: [initialLabels[0], initialLabels[2]],
+    labels: [
+      {
+        labelName: "work",
+        color: "red",
+      },
+      {
+        labelName: "sport",
+        color: "blue",
+      },
+    ],
     birthDate: new Date(2001, 11, 9),
     address: {
       street: "Jl Cipto Mangunkusumo",
@@ -127,7 +160,12 @@ export let initialData = [
     name: "Andi Saputra",
     phone: "089612345321",
     email: "andi.saputra@example.com",
-    labels: [initialLabels[1]],
+    labels: [
+      {
+        labelName: "family",
+        color: "green",
+      },
+    ],
     birthDate: new Date(1999, 9, 27),
     address: {
       street: "Jl Tuparev",
