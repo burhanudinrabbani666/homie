@@ -48,7 +48,9 @@ export function renderContact(initialData) {
           })
           .join("")}
        </div>
-       <button class="menu-btn" data-id=${contact.id}>X</button>
+       <button class="menu-btn" data-id=${contact.id}>
+       <ion-icon name="grid-outline"></ion-icon>
+       </button>
        <div class="menu hidden menu-${contact.id}" data-id=${contact.id}>
          <a href="/detail-contact/?id=${contact.id}" class="menu-item">
            <ion-icon name="eye-outline"></ion-icon>

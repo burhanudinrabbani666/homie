@@ -318,6 +318,23 @@ ion-icon {
 
 .menu-btn {
   padding: 0.8rem 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: end;
+}
+
+.menu-btn ion-icon {
+  border: 1px solid #d7d9db;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.menu-btn ion-icon:hover,
+.menu-btn ion-icon:active {
+  background-color: #d7d9db;
 }
 
 .menu-item {
