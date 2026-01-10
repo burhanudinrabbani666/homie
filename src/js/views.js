@@ -33,12 +33,12 @@ export function renderContact(initialData) {
      <li class="contact-list grid-4-col ${
        contact.favorites ? "favorites" : ""
      }">
-       <div class="name">
+       <div class="contact-name">
          <div class="img"></div>
          <p>${contact.name}</p>
        </div>
-       <p> ${contact.phone}</p>
-       <p>${contact.email}</p>
+       <p class="contact-phone"> ${contact.phone}</p>
+       <p class="contact-email">${contact.email}</p>
        <div class="tags">
         ${contact.labels
           .map((label) => {

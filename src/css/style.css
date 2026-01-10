@@ -276,6 +276,16 @@ ion-icon {
   position: relative;
 }
 
+.contact-name,
+.contact-phone,
+.contact-email,
+.tags,
+.menu-btn {
+  width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .favorites {
   border: 1px solid #ffd700;
 }
