@@ -1,7 +1,7 @@
 .form__container {
-  max-width: 50%;
-  display: flex;
-  flex-direction: column;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 2.4rem;
 
   position: relative;
@@ -9,12 +9,15 @@
   font-size: 1.6rem;
 }
 
+.form__btn-container {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: end;
+}
+
 .btn {
   max-width: max-content;
   padding: 8px 12px;
-
-  align-self: flex-end;
-
   border: none;
   background-color: #2187af;
   color: #fff;
@@ -30,7 +33,7 @@
   gap: 2.4rem;
 }
 
-.icon-contact ion-icon {
+ion-icon {
   font-size: 2.8rem;
   color: #858585;
 }
@@ -57,4 +60,19 @@ input {
 input:focus {
   outline: 1px solid #2187af;
   box-shadow: none;
+}
+
+.form__fields-address-container {
+  display: flex;
+  gap: 2.4rem;
+  align-items: start;
+  width: 100%;
+}
+
+.form__fields--address {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
 }

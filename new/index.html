@@ -47,7 +47,9 @@
 
       <main class="main">
         <form method="post" class="form__container">
-          <button type="submit" class="btn">Save</button>
+          <div class="form__btn-container">
+            <button type="submit" class="btn">Save</button>
+          </div>
 
           <div class="form__fields">
             <div class="icon-contact">
@@ -94,13 +96,12 @@
             </div>
           </div>
 
-          <div class="form__fields">
-            <div class="icon-contact">
+          <div class="form__fields-address-container">
+            <header class="icon-contact">
               <ion-icon name="map-outline"></ion-icon>
-              <p>Adress</p>
-            </div>
-            <div class="fields__address">
-              <div class="fields__address-item">
+            </header>
+            <div class="form__fields--address">
+              <div class="fields">
                 <label for="street">street</label>
                 <input
                   type="text"
@@ -110,27 +111,27 @@
                 />
               </div>
 
-              <div class="fields__address-item">
+              <div class="fields">
                 <label for="subdistrict">subdistrict</label>
                 <input type="text" id="subdistrict" name="subdistrict" />
               </div>
 
-              <div class="fields__address-item">
+              <div class="fields">
                 <label for="city">city</label>
                 <input type="text" id="city" name="city" />
               </div>
 
-              <div class="fields__address-item">
+              <div class="fields">
                 <label for="province">province</label>
                 <input type="text" id="province" name="province" />
               </div>
 
-              <div class="fields__address-item">
+              <div class="fields">
                 <label for="country">country</label>
                 <input type="text" id="country" name="country" />
               </div>
 
-              <div class="fields__address-item">
+              <div class="fields">
                 <label for="zip code">zip code</label>
                 <input type="text" id="zip code" name="zip code" />
               </div>

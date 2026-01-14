@@ -1,4 +1,5 @@
-import { contactsElement, tagsElement } from "./controller";
+import { contactsElement, tagsElement } from "./controller.js";
+import { contactsAmount } from "./dom.js";
 
 export function renderLabels(initialData) {
   const labelsArray = initialData.flatMap((contact) => contact.labels);
@@ -30,9 +31,7 @@ export function renderLabels(initialData) {
 export function renderContact(initialData) {
   const html = initialData.map((contact) => {
     return `
-     <li class="contact-list grid-4-col ${
-       contact.favorites ? "favorites" : ""
-     }">
+     <li class="contact-list grid-4-col">
        <div class="contact-name">
          <div class="img"></div>
          <p>${contact.name}</p>
@@ -56,8 +55,12 @@ export function renderContact(initialData) {
            <ion-icon name="eye-outline"></ion-icon>
            <span>View Detail</span>
          </a>
-         <button class="menu-item favorite-btn" data-id=${contact.id}>
-           <ion-icon name="star-outline"></ion-icon>
+         <button class="menu-item favorite-btn ${
+           contact.favorites ? "favorites" : ""
+         }" data-id=${contact.id}>
+           <ion-icon name="star${
+             contact.favorites ? "" : "-outline"
+           }"></ion-icon>
            <span>Favorites</span>
          </button>
          <button class="menu-item">
@@ -74,5 +77,6 @@ export function renderContact(initialData) {
     `;
   });
 
+  contactsAmount.innerHTML = initialData.length;
   contactsElement.innerHTML = html.join("");
 }

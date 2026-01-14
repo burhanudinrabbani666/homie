@@ -1,5 +1,5 @@
-import { initialData, initialLabels } from "./data/data";
-import { renderContact, renderLabels } from "./views";
+import { initialData, initialLabels } from "./data/data.js";
+import { renderContact, renderLabels } from "./views.js";
 
 // Dom
 export const tagsElement = document.querySelector(".nav__tags");
