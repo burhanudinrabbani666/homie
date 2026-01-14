@@ -1,18 +1,77 @@
 .contact__container {
-  border: 1px solid black;
+  height: 100%;
 }
+
 .contact__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 2rem;
 }
-.contact__back-to-home {
-}
-.contact__menu-container {
-}
-.contact__favorites-btn {
-}
-.contact__edit-btn {
-}
+.contact__back-to-home,
+.contact__favorites-btn,
+.contact__edit-btn,
 .contact__delete-btn {
+  background: none;
+  border: none;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.contact__back-to-home:hover,
+.contact__back-to-home:active,
+.contact__favorites-btn:hover,
+.contact__favorites-btn:active,
+.contact__edit-btn:hover,
+.contact__edit-btn:active,
+.contact__delete-btn:hover,
+.contact__delete-btn:active {
+  background-color: #f1f3f5;
+}
+
+.contact__menu-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+ion-icon {
+  font-size: 2rem;
+}
+
+/* --------------------------------------------------- */
+/* --------------------------------------------------- */
+
+.contact__detail-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  border: 1px solid black;
+  gap: 5rem;
+}
+
+.contact__image {
+  background-color: blanchedalmond;
+  height: 30rem;
+  border-radius: 50%;
+}
+
+.contact__name {
+  font-size: 4.4rem;
+  font-weight: 400;
+}
+
+.contact__detail {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.contact__data-box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.contact__data-box:not(:last-child) {
+  margin-bottom: 1.2rem;
 }

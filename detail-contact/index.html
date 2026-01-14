@@ -42,13 +42,66 @@
       <main class="main">
         <div class="contact__container">
           <header class="contact__header">
-            <a href="/index.html" class="contact__back-to-home">Back</a>
+            <a href="/index.html" class="contact__back-to-home">
+              <ion-icon name="arrow-back-outline"></ion-icon>
+            </a>
             <div class="contact__menu-container">
-              <button class="contact__favorites-btn">star</button>
-              <a href="/edit-contact" class="contact__edit-btn">edit</a>
-              <button class="contact__delete-btn">trash</button>
+              <button class="contact__favorites-btn">
+                <ion-icon name="star-outline"></ion-icon>
+              </button>
+              <a href="/edit-contact" class="contact__edit-btn">
+                <ion-icon name="pencil-outline"></ion-icon>
+              </a>
+              <button class="contact__delete-btn">
+                <ion-icon name="trash-outline"></ion-icon>
+              </button>
             </div>
           </header>
+
+          <div class="contact__detail-container">
+            <div class="contact__image">
+              <img src="" alt="" />
+            </div>
+            <div class="contact__detail">
+              <h2 class="contact__name">Burhanudin Rabbani</h2>
+
+              <div class="contact__data_container">
+                <div class="contact__data-box">
+                  <ion-icon name="call"></ion-icon>
+                  <span class="contact__phone">08123456789</span>
+                </div>
+
+                <div class="contact__data-box">
+                  <ion-icon name="mail"></ion-icon>
+                  <span class="contact__email">bani@example.co</span>
+                </div>
+
+                <div class="contact__data-box">
+                  <ion-icon name="business"></ion-icon>
+                  <span class="contact__company">PT Simnu</span>
+                </div>
+
+                <div class="contact__data-box">
+                  <ion-icon name="calendar"></ion-icon>
+                  <span class="contact__birthdate"
+                    >14 november 2002 (23 years old)</span
+                  >
+                </div>
+
+                <div class="contact__data-box">
+                  <ion-icon name="map"></ion-icon>
+                  <span class="contact__address"
+                    >Ciwaringin, Cirebon, East Java, Indonesia. 45167</span
+                  >
+                </div>
+              </div>
+
+              <div class="contact__data-box labels">
+                <span class="contact__label tag label-color-red">Work</span>
+                <span class="contact__label tag label-color-blue">study</span>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
     </div>
