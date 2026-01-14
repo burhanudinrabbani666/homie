@@ -1,0 +1,18 @@
+.contact__container {
+  border: 1px solid black;
+}
+.contact__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.contact__back-to-home {
+}
+.contact__menu-container {
+}
+.contact__favorites-btn {
+}
+.contact__edit-btn {
+}
+.contact__delete-btn {
+}
