@@ -1,3 +1,11 @@
+.u-margin-bottom-small {
+  margin-bottom: 0.8rem;
+}
+
+.u-margin-bottom-large {
+  margin-bottom: 2.4rem;
+}
+
 .contact__container {
   height: 100%;
 }
@@ -41,23 +49,43 @@ ion-icon {
 
 /* --------------------------------------------------- */
 /* --------------------------------------------------- */
+.contact__image-container {
+  height: 30rem;
+  width: 100%;
+
+  position: relative;
+}
+
+.contact__image--background {
+  height: 100%;
+
+  background-image: url(https://images.unsplash.com/photo-1765873360499-3f7459f2ff94?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+  background-position: 50% 50%;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 90%);
+}
+
+.contact__image--profile {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+
+  background-image: url(https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+}
 
 .contact__detail-container {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  border: 1px solid black;
-  gap: 5rem;
-}
-
-.contact__image {
-  background-color: blanchedalmond;
-  height: 30rem;
-  border-radius: 50%;
+  grid-template-columns: 2fr 1fr;
 }
 
 .contact__name {
-  font-size: 4.4rem;
-  font-weight: 400;
+  font-size: 3.6rem;
+  font-weight: 600;
 }
 
 .contact__detail {
@@ -74,4 +102,36 @@ ion-icon {
 
 .contact__data-box:not(:last-child) {
   margin-bottom: 1.2rem;
+}
+
+.contact__data-box--date {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 2.4rem;
+  border-radius: 10px;
+
+  background-color: #e4f3fe;
+}
+
+.contact__updated-date {
+  clear: both;
+
+  position: relative;
+}
+
+.contact__updated-list {
+  border-left: 1px solid hsla(210, 10%, 23%, 0.4);
+  margin-left: 8px;
+  position: relative;
+}
+
+.contact__updated-item {
+  padding: 4px 0;
+  margin-left: -4px;
+  background-color: #e4f3fe;
+}
+
+.contact__updated-item:not(:last-child) {
+  margin-bottom: 2rem;
 }
