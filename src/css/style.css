@@ -82,8 +82,8 @@ a {
 }
 
 .app {
-  max-width: 120rem;
-  min-height: 90vh;
+  max-width: 140rem;
+  height: 92vh;
   padding: 1.2 rem;
   margin: auto;
 
@@ -123,7 +123,6 @@ a {
 /* ------------------------------ */
 
 .main {
-  border: 1px solid #333;
   padding: 5rem 2.4rem 1rem;
 }
 
@@ -195,7 +194,7 @@ a {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   align-items: center;
-  gap: 1rem;
+  gap: 2.4rem;
 
   padding: 0 1.6rem;
 }
@@ -203,7 +202,7 @@ a {
 .main__container {
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
+  gap: 1.2rem;
 }
 
 .main__container-contact {
@@ -216,18 +215,23 @@ a {
   padding: 1.2rem 1.6rem;
   border-radius: 0.4rem;
 
-  background-color: #8ad3fc;
+  border-bottom: 1px solid #d7d9db;
 }
+
 /* --------------------------- */
 /* Contact container */
 /* --------------------------- */
 
 .contact-list {
-  padding: 2rem 1.6rem;
-  border: 1px solid #343a4033;
-  border-radius: 1rem;
+  padding: 1rem 1.6rem;
+  border-radius: 4px;
 
   position: relative;
+}
+
+.contact-list:hover,
+.contact-list:active {
+  background-color: #f1f3f5;
 }
 
 .contact-name,
@@ -247,7 +251,7 @@ a {
 
 .tag {
   padding: 0.4rem 0.8rem;
-  border-radius: 1rem;
+  border-radius: 4px;
 }
 
 .menu {
@@ -260,8 +264,9 @@ a {
   border: 1px solid #d7d9db;
   border-radius: 1rem;
   position: absolute;
-  right: 5rem;
-  top: -14rem;
+  right: 7rem;
+  top: -5rem;
+  z-index: 10;
 
   background-color: #fff;
 }

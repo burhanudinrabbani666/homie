@@ -42,98 +42,155 @@
       </header>
 
       <main class="main">
-        <form method="post" class="form__container">
-          <div class="form__btn-container">
-            <button type="submit" class="btn">Save</button>
-          </div>
+        <div class="form__container">
+          <form method="post" class="form">
+            <div class="form__btn-container">
+              <button type="submit" class="btn">Save</button>
+            </div>
 
-          <div class="form__fields">
-            <div class="icon-contact">
-              <ion-icon name="person-circle-outline"></ion-icon>
-            </div>
-            <div class="fields">
-              <label for="name">Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="full name"
-              />
-            </div>
-          </div>
-
-          <div class="form__fields">
-            <div class="icon-contact">
-              <ion-icon name="call-outline"></ion-icon>
-            </div>
-            <div class="fields">
-              <label for="phone">Phone</label>
-              <input type="tel" id="phone" name="phone" placeholder="phone" />
-            </div>
-          </div>
-
-          <div class="form__fields">
-            <div class="icon-contact">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-            <div class="fields">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="email" />
-            </div>
-          </div>
-
-          <div class="form__fields">
-            <div class="icon-contact">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-            <div class="fields">
-              <label for="birthdate">Birthdate</label>
-              <input type="date" id="birthdate" name="birthdate" />
-            </div>
-          </div>
-
-          <div class="form__fields-address-container">
-            <header class="icon-contact">
-              <ion-icon name="map-outline"></ion-icon>
-            </header>
-            <div class="form__fields--address">
+            <div class="form__fields">
+              <div class="icon-contact">
+                <ion-icon name="person-circle-outline"></ion-icon>
+              </div>
               <div class="fields">
-                <label for="street">street</label>
+                <label for="name">Name</label>
                 <input
                   type="text"
-                  id="street"
-                  name="street"
-                  placeholder="Jl Cipto Mangunkusumo..."
+                  id="name"
+                  name="name"
+                  placeholder="full name"
                 />
               </div>
+            </div>
 
-              <div class="fields">
-                <label for="subdistrict">subdistrict</label>
-                <input type="text" id="subdistrict" name="subdistrict" />
+            <div class="form__fields">
+              <div class="icon-contact">
+                <ion-icon name="call-outline"></ion-icon>
               </div>
-
               <div class="fields">
-                <label for="city">city</label>
-                <input type="text" id="city" name="city" />
-              </div>
-
-              <div class="fields">
-                <label for="province">province</label>
-                <input type="text" id="province" name="province" />
-              </div>
-
-              <div class="fields">
-                <label for="country">country</label>
-                <input type="text" id="country" name="country" />
-              </div>
-
-              <div class="fields">
-                <label for="zip code">zip code</label>
-                <input type="text" id="zip code" name="zip code" />
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="phone" />
               </div>
             </div>
-          </div>
-        </form>
+
+            <div class="form__fields">
+              <div class="icon-contact">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
+              <div class="fields">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="email"
+                />
+              </div>
+            </div>
+
+            <div class="form__fields">
+              <div class="icon-contact">
+                <ion-icon name="calendar-outline"></ion-icon>
+              </div>
+              <div class="fields">
+                <label for="birthdate">Birthdate</label>
+                <input type="date" id="birthdate" name="birthdate" />
+              </div>
+            </div>
+
+            <div class="form__fields-address-container">
+              <header class="icon-contact">
+                <ion-icon name="map-outline"></ion-icon>
+              </header>
+              <div class="form__fields--address">
+                <div class="fields">
+                  <label for="street">street</label>
+                  <input
+                    type="text"
+                    id="street"
+                    name="street"
+                    placeholder="street"
+                  />
+                </div>
+
+                <div class="fields">
+                  <label for="subdistrict">subdistrict</label>
+                  <input
+                    type="text"
+                    id="subdistrict"
+                    name="subdistrict"
+                    placeholder="subdistrict"
+                  />
+                </div>
+
+                <div class="fields">
+                  <label for="city">city</label>
+                  <input type="text" id="city" name="city" placeholder="city" />
+                </div>
+
+                <div class="fields">
+                  <label for="province">province</label>
+                  <input
+                    type="text"
+                    id="province"
+                    name="province"
+                    placeholder="province"
+                  />
+                </div>
+
+                <div class="fields">
+                  <label for="country">country</label>
+                  <input
+                    type="text"
+                    id="country"
+                    name="country"
+                    placeholder="country"
+                  />
+                </div>
+
+                <div class="fields">
+                  <label for="zipCode">zip code</label>
+                  <input
+                    type="text"
+                    id="zipCode"
+                    name="zipCode"
+                    placeholder="zip code"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="form__fields">
+              <div class="icon-contact">
+                <ion-icon name="image-outline"></ion-icon>
+              </div>
+              <div class="fields">
+                <label for="bgImageLink">background image link</label>
+                <input
+                  type="url"
+                  id="bgImageLink"
+                  name="bgImageLink"
+                  placeholder="background image link"
+                />
+              </div>
+            </div>
+
+            <div class="form__fields">
+              <div class="icon-contact">
+                <ion-icon name="aperture-outline"></ion-icon>
+              </div>
+              <div class="fields">
+                <label for="photoProfile">photoProfile</label>
+                <input
+                  type="tel"
+                  id="photoProfile"
+                  name="photoProfile"
+                  placeholder="photo profile link"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
       </main>
     </div>
 

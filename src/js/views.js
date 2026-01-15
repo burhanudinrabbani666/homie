@@ -32,10 +32,7 @@ export function renderContact(initialData) {
   const html = initialData.map((contact) => {
     return `
      <li class="contact-list grid-4-col">
-       <div class="contact-name">
-         <div class="img"></div>
-         <p>${contact.name}</p>
-       </div>
+       <p class="contact-name">${contact.name}</p>
        <p class="contact-phone"> ${contact.phone}</p>
        <p class="contact-email">${contact.email}</p>
        <div class="tags">
