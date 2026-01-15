@@ -4,37 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homie</title>
-    <link rel="stylesheet" href="./src/css/style.css" />
+    <link rel="stylesheet" href="/src/css/style.css" />
     <link rel="stylesheet" href="./src/css/card.css" />
+    <link rel="stylesheet" href="/src/css/components/navigation.css" />
   </head>
   <body>
     <div class="app">
-      <header class="header flex-col">
-        <nav class="nav__main flex-col">
-          <h1>
-            <a href="/">HOMIE</a>
-          </h1>
+      <header class="header">
+        <h1>
+          <a href="/">HOMIE</a>
+        </h1>
+        <nav class="nav__main">
           <ul class="nav__main-list flex-col">
             <li>
-              <a class="nav__main-item add-contact" href="#">
+              <a
+                class="nav__main-item add-contact add-contact-new"
+                href="./new/index.html"
+              >
                 <ion-icon name="add-outline"></ion-icon>
                 <p class="main-item-text">Add Contact</p></a
               >
             </li>
-            <div class="nav__main-non-add flex-col">
-              <li>
-                <a class="nav__main-item" href="#favorites">
-                  <ion-icon name="star-outline"></ion-icon>
-                  <p class="main-item-text">Favorites</p>
-                </a>
-              </li>
-              <li>
-                <a class="nav__main-item" href="#">
-                  <ion-icon name="trash-outline"></ion-icon>
-                  <p class="main-item-text">Trash</p>
-                </a>
-              </li>
-            </div>
+            <li>
+              <a class="nav__main-item" href="#favorites">
+                <ion-icon name="star-outline"></ion-icon>
+                <p class="nav__main-item-text">Favorites</p>
+              </a>
+            </li>
+            <li>
+              <a class="nav__main-item" href="#">
+                <ion-icon name="trash-outline"></ion-icon>
+                <p class="nav__main-item-text">Trash</p>
+              </a>
+            </li>
           </ul>
         </nav>
       </header>
@@ -86,9 +88,10 @@
 
                   <div class="contact__data-box">
                     <ion-icon name="calendar"></ion-icon>
-                    <span class="contact__birthdate"
-                      >14 november 2002 (23 years old)</span
-                    >
+                    <p>
+                      <span class="contact__birthdate">14 november 2002</span>
+                      (<span class="contact__age">23 years old</span>)
+                    </p>
                   </div>
 
                   <div class="contact__data-box">
@@ -108,7 +111,10 @@
               <div class="contact__detail-date">
                 <div class="contact__data-box--date">
                   <h3>History</h3>
-                  <p><strong>Created at &bull;</strong> 14 november 2002</p>
+                  <p>
+                    <strong>Created at &bull;</strong>
+                    <span class="contact__date-created">14 november 2002</span>
+                  </p>
                   <div class="contact__updated-date">
                     <h4 class="contact__updated-header u-margin-bottom-small">
                       Updated at &bull;

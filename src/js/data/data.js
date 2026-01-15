@@ -38,6 +38,7 @@ export let initialData = [
       },
     ],
     birthDate: new Date(2002, 10, 14),
+    company: "PT Makmur Jaya Indonesia",
     address: {
       street: "Jl ki brajanata",
       subdistrict: "Ciwaringin",
@@ -50,6 +51,10 @@ export let initialData = [
     updatedAt: new Date(),
     deletedAt: null,
     favorites: true,
+    photoProfileLink:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    backgroundLink:
+      "https://images.unsplash.com/photo-1765873360499-3f7459f2ff94?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 2,
@@ -63,6 +68,7 @@ export let initialData = [
       },
     ],
     birthDate: new Date(1998, 4, 21),
+    company: "PT Shoppe",
     address: {
       street: "Jl Merdeka Raya",
       subdistrict: "Kejaksan",
@@ -75,6 +81,10 @@ export let initialData = [
     updatedAt: new Date(),
     deletedAt: null,
     favorites: false,
+    photoProfileLink:
+      "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D",
+    backgroundLink:
+      "https://images.unsplash.com/photo-1768006238345-1d515dea8953?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxNHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 3,
@@ -88,6 +98,7 @@ export let initialData = [
       },
     ],
     birthDate: new Date(2000, 7, 3),
+    company: "PT Simnu",
     address: {
       street: "Jl Sunan Gunung Jati",
       subdistrict: "Harjamukti",
@@ -100,6 +111,9 @@ export let initialData = [
     updatedAt: new Date(),
     deletedAt: null,
     favorites: true,
+    photoProfileLink:
+      "https://plus.unsplash.com/premium_photo-1664298528358-790433ba0815?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    backgroundLink: "",
   },
   {
     id: 4,
@@ -113,6 +127,7 @@ export let initialData = [
       },
     ],
     birthDate: new Date(1997, 1, 15),
+    company: "PT Simnu",
     address: {
       street: "Jl Kartini",
       subdistrict: "Lemahwungkuk",
@@ -125,6 +140,10 @@ export let initialData = [
     updatedAt: new Date(),
     deletedAt: null,
     favorites: false,
+    photoProfileLink:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D",
+    backgroundLink:
+      "https://images.unsplash.com/photo-1768310512589-5925669f1784?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyOHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 5,
@@ -142,6 +161,7 @@ export let initialData = [
       },
     ],
     birthDate: new Date(2001, 11, 9),
+    company: "PT Simnu",
     address: {
       street: "Jl Cipto Mangunkusumo",
       subdistrict: "Kesambi",
@@ -154,6 +174,10 @@ export let initialData = [
     updatedAt: new Date(),
     deletedAt: null,
     favorites: true,
+    photoProfileLink:
+      "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHVzZXIlMjBwcm9maWxlfGVufDB8fDB8fHww",
+    backgroundLink:
+      "https://images.unsplash.com/photo-1768076644880-5cbbaf1a2b66?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0MXx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 6,
@@ -167,6 +191,7 @@ export let initialData = [
       },
     ],
     birthDate: new Date(1999, 9, 27),
+    company: "PT Simnu",
     address: {
       street: "Jl Tuparev",
       subdistrict: "Plumbon",
@@ -179,5 +204,9 @@ export let initialData = [
     updatedAt: new Date(),
     deletedAt: null,
     favorites: false,
+    photoProfileLink:
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHVzZXIlMjBwcm9maWxlfGVufDB8fDB8fHww",
+    backgroundLink:
+      "https://images.unsplash.com/photo-1768326943634-f15d407bda45?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzN3x8fGVufDB8fHx8fA%3D%3D",
   },
 ];
