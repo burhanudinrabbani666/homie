@@ -29,3 +29,5 @@ export const updatedAtELement = document.querySelector(
 export const favoritesBtnElement = document.querySelector(
   ".contact__favorites-btn"
 );
+
+export const editBtnElement = document.querySelector(".contact__edit-btn");
