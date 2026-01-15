@@ -23,7 +23,7 @@
   background: none;
   border: none;
   padding: 8px;
-  border-radius: 50%;
+  border-radius: 4px;
 }
 
 .contact__back-to-home:hover,
@@ -58,6 +58,9 @@ ion-icon {
 }
 .detail__contact--not-found {
   text-align: center;
+  padding: 24rem 0;
+  font-size: 2.4rem;
+  color: #343a408d;
 }
 
 .contact__image--background {

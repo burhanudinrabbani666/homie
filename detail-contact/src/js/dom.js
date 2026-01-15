@@ -25,3 +25,7 @@ export const contactProfileElement = document.querySelector(
 export const updatedAtELement = document.querySelector(
   ".contact__updated-list"
 );
+
+export const favoritesBtnElement = document.querySelector(
+  ".contact__favorites-btn"
+);
