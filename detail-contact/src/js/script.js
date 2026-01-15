@@ -15,6 +15,7 @@ const contactBackgroundElement = document.querySelector(
 const contactProfileElement = document.querySelector(
   ".contact__image--profile"
 );
+const updatedAtELement = document.querySelector(".contact__updated-list");
 
 function formatedDate(date) {
   return new Intl.DateTimeFormat("en-US", {
@@ -26,20 +27,21 @@ function formatedDate(date) {
 
 function renderContact() {
   const contactID = window.location.search.split("=").slice(-1);
-  console.log(...contactID);
   const contact = initialData.find(
     (contact) => contact.id === Number(...contactID)
   );
 
+  renderData(contact);
+}
+
+//  <li class="contact__updated-item">09 Desember 2014</li>
+
+function renderData(contact) {
   const birthDate = formatedDate(contact.birthDate);
-
-  const labels = contact.labels.map((label) => {
-    return ` 
-        <span class="contact__label tag label-color-${label.color}">${label.labelName}</span>
-    `;
-  });
-
+  const labels = renderLabael(contact);
   const createdAtText = formatedDate(contact.createdAt);
+  const address = formatedAddress(contact);
+  const updatedAtList = renderUpdatedList(contact).join("");
 
   contactNameElement.textContent = contact.name;
   contactPhoneElement.textContent = contact.phone;
@@ -50,10 +52,31 @@ function renderContact() {
     new Date().getFullYear() - contact.birthDate.getFullYear()
   } years old`;
   contactCreatedElement.textContent = createdAtText;
-  // contactAddressElement.textContent = contact.address;
-  contactLabelsElement.innerHTML = labels.join("");
+  contactAddressElement.textContent = address;
   contactBackgroundElement.style.backgroundImage = `url(${contact.backgroundLink})`;
   contactProfileElement.style.backgroundImage = `url(${contact.photoProfileLink})`;
+
+  contactLabelsElement.innerHTML = labels.join("");
+  updatedAtELement.innerHTML = updatedAtList;
+}
+
+function renderLabael(contact) {
+  return contact.labels.map((label) => {
+    return ` 
+        <span class="contact__label tag label-color-${label.color}">${label.labelName}</span>
+    `;
+  });
+}
+
+function formatedAddress(contact) {
+  return `${contact.address.street}, ${contact.address.subdistrict}, ${contact.address.city}, ${contact.address.province} ${contact.address.zipCode}, ${contact.address.country}`;
+}
+
+function renderUpdatedList(contact) {
+  return contact.updatedAt.map(
+    (list) =>
+      `<li class="contact__updated-item">${formatedDate(list.date)}</li>`
+  );
 }
 
 renderContact();

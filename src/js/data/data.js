@@ -48,13 +48,19 @@ export let initialData = [
       zipCode: "45167",
     },
     createdAt: new Date(),
-    updatedAt: new Date(),
+    updatedAt: [
+      { id: 1, date: new Date(2025, 10, 14) },
+      { id: 2, date: new Date(2025, 8, 12) },
+      { id: 3, date: new Date(2025, 7, 24) },
+      { id: 4, date: new Date(2025, 6, 12) },
+      { id: 5, date: new Date(2025, 5, 1) },
+    ],
     deletedAt: null,
     favorites: true,
     photoProfileLink:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://avatars.githubusercontent.com/u/228936784?s=400&u=11d4e54d4991c31c3daa02cfdc5d13ae87a56e87&v=4",
     backgroundLink:
-      "https://images.unsplash.com/photo-1765873360499-3f7459f2ff94?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1611457194403-d3aca4cf9d11?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGFuaW1lfGVufDB8fDB8fHww",
   },
   {
     id: 2,
@@ -78,7 +84,13 @@ export let initialData = [
       zipCode: "45121",
     },
     createdAt: new Date(),
-    updatedAt: new Date(),
+    updatedAt: [
+      { id: 1, date: new Date(2025, 9, 30) },
+      { id: 2, date: new Date(2025, 8, 15) },
+      { id: 3, date: new Date(2025, 7, 10) },
+      { id: 4, date: new Date(2025, 6, 1) },
+      { id: 5, date: new Date(2025, 5, 18) },
+    ],
     deletedAt: null,
     favorites: false,
     photoProfileLink:
@@ -108,12 +120,19 @@ export let initialData = [
       zipCode: "45143",
     },
     createdAt: new Date(),
-    updatedAt: new Date(),
+    updatedAt: [
+      { id: 1, date: new Date(2025, 10, 5) },
+      { id: 2, date: new Date(2025, 9, 12) },
+      { id: 3, date: new Date(2025, 8, 3) },
+      { id: 4, date: new Date(2025, 6, 25) },
+      { id: 5, date: new Date(2025, 5, 9) },
+    ],
     deletedAt: null,
     favorites: true,
     photoProfileLink:
       "https://plus.unsplash.com/premium_photo-1664298528358-790433ba0815?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    backgroundLink: "",
+    backgroundLink:
+      "https://images.unsplash.com/photo-1768162125657-b31a6c0c90cd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0Mnx8fGVufDB8fHx8fA%3D%3D  ",
   },
   {
     id: 4,
@@ -137,7 +156,13 @@ export let initialData = [
       zipCode: "45111",
     },
     createdAt: new Date(),
-    updatedAt: new Date(),
+    updatedAt: [
+      { id: 1, date: new Date(2025, 9, 20) },
+      { id: 2, date: new Date(2025, 8, 7) },
+      { id: 3, date: new Date(2025, 7, 1) },
+      { id: 4, date: new Date(2025, 6, 10) },
+      { id: 5, date: new Date(2025, 4, 28) },
+    ],
     deletedAt: null,
     favorites: false,
     photoProfileLink:
@@ -171,7 +196,13 @@ export let initialData = [
       zipCode: "45133",
     },
     createdAt: new Date(),
-    updatedAt: new Date(),
+    updatedAt: [
+      { id: 1, date: new Date(2025, 10, 1) },
+      { id: 2, date: new Date(2025, 9, 18) },
+      { id: 3, date: new Date(2025, 8, 9) },
+      { id: 4, date: new Date(2025, 7, 2) },
+      { id: 5, date: new Date(2025, 6, 14) },
+    ],
     deletedAt: null,
     favorites: true,
     photoProfileLink:
@@ -201,7 +232,7 @@ export let initialData = [
       zipCode: "45155",
     },
     createdAt: new Date(),
-    updatedAt: new Date(),
+    updatedAt: [{ id: 1, date: new Date(2025, 9, 8) }],
     deletedAt: null,
     favorites: false,
     photoProfileLink:
