@@ -14,8 +14,8 @@ export function renderLabels(initialData) {
     return `
       <li>
         <a class="nav__main-item" href="#${label.labelName.toLowerCase()}"
-          ><div class="item-color label-color-${label.color}"></div>
-          <span class="item-label">${label.labelName.replace(
+          ><div class="nav__item-color label-color-${label.color}"></div>
+          <span class="nav__item-label">${label.labelName.replace(
             label.labelName[0],
             label.labelName[0].toUpperCase()
           )}</span></a

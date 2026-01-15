@@ -1,0 +1,46 @@
+.nav__main-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.nav__main-item {
+  max-width: 15rem;
+  border: 1px solid #f1f3f5;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.4rem;
+
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.add-contact {
+  background-color: #2187af;
+  color: #fff;
+
+  transition: all 0.4s;
+}
+
+.add-contact:hover {
+  background-color: #1e7a9e;
+}
+
+.nav__main-item ion-icon {
+  font-size: 1.8rem;
+}
+
+.nav__tags-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.nav__item-color {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+/*
+.nav__item-label {}
+.nav__tags {}
+*/
