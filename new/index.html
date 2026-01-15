@@ -4,44 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homie</title>
-    <link rel="stylesheet" href="./src/css/style.css" />
-    <link rel="stylesheet" href="./src/css/card.css" />
+    <link rel="stylesheet" href="/src/css/style.css" />
     <link rel="stylesheet" href="./src/css/form.css" />
+    <link rel="stylesheet" href="/src/css/components/navigation.css" />
   </head>
   <body>
     <div class="app">
-      <header class="header flex-col">
-        <nav class="nav__main flex-col">
-          <h1>
-            <a href="/">HOMIE</a>
-          </h1>
+      <header class="header">
+        <h1>
+          <a href="/">HOMIE</a>
+        </h1>
+        <nav class="nav__main">
           <ul class="nav__main-list flex-col">
             <li>
-              <a class="nav__main-item add-contact" href="#">
+              <a
+                class="nav__main-item add-contact add-contact-new"
+                href="./new/index.html"
+              >
                 <ion-icon name="add-outline"></ion-icon>
                 <p class="main-item-text">Add Contact</p></a
               >
             </li>
-            <div class="nav__main-non-add flex-col">
-              <li>
-                <a class="nav__main-item" href="#favorites">
-                  <ion-icon name="star-outline"></ion-icon>
-                  <p class="main-item-text">Favorites</p>
-                </a>
-              </li>
-              <li>
-                <a class="nav__main-item" href="#">
-                  <ion-icon name="trash-outline"></ion-icon>
-                  <p class="main-item-text">Trash</p>
-                </a>
-              </li>
-            </div>
+            <li>
+              <a class="nav__main-item" href="#favorites">
+                <ion-icon name="star-outline"></ion-icon>
+                <p class="nav__main-item-text">Favorites</p>
+              </a>
+            </li>
+            <li>
+              <a class="nav__main-item" href="#">
+                <ion-icon name="trash-outline"></ion-icon>
+                <p class="nav__main-item-text">Trash</p>
+              </a>
+            </li>
           </ul>
-
-          <nav class="nav__tags-container">
-            <h3>Tags</h3>
-            <ul class="nav__tags flex-col"></ul>
-          </nav>
         </nav>
       </header>
 

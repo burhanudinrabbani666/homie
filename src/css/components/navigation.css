@@ -14,6 +14,11 @@
   align-items: center;
 }
 
+.nav__main-item:hover,
+.nav__main-item:active {
+  background-color: #f1f3f5;
+}
+
 .add-contact {
   background-color: #2187af;
   color: #fff;
@@ -21,8 +26,13 @@
   transition: all 0.4s;
 }
 
-.add-contact:hover {
-  background-color: #1e7a9e;
+.add-contact:hover,
+.add-contact:active {
+  background-color: #175f7b;
+}
+
+.add-contact-new {
+  background-color: #175f7b;
 }
 
 .nav__main-item ion-icon {

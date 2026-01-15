@@ -93,57 +93,6 @@ a {
   text-decoration: none;
 }
 
-.flex-col {
-  display: flex;
-  flex-direction: column;
-}
-
-.header {
-  gap: 2.4rem;
-
-  max-width: 20rem;
-  border: 1px solid #d7d9db;
-  border-radius: 1rem;
-
-  padding: 1.2rem 2.4rem;
-}
-
-.nav__main {
-  gap: 1.2rem;
-}
-
-.nav__main-list,
-.nav__tags,
-.nav__main-non-add {
-  gap: 0.8rem;
-}
-
-.nav__main-item {
-  max-width: 15rem;
-  border: 1px solid #f1f3f5;
-  padding: 0.8rem 1.2rem;
-  border-radius: 0.4rem;
-
-  display: flex;
-  gap: 0.8rem;
-  align-items: center;
-}
-
-.add-contact {
-  background-color: #2187af;
-  color: #fff;
-}
-
-.main-item-text {
-  height: 100%;
-}
-
-.item-color {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
-
 .label-color-red {
   background-color: #ffc9c9;
 }

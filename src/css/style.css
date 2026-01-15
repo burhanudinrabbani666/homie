@@ -13,7 +13,7 @@
 2. Color
 
 Primary : #2187AF
-Primary-dark : #1e7a9e
+Primary-dark : #175f7b
 
 Secondary
 
@@ -72,10 +72,19 @@ body {
   padding: 4rem 0;
 }
 
+li {
+  list-style: none;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
 .app {
   max-width: 120rem;
-  height: 80vh;
-  padding: 2.4rem;
+  min-height: 90vh;
+  padding: 1.2 rem;
   margin: auto;
 
   display: grid;
@@ -86,14 +95,6 @@ body {
 /* ------------------------------ */
 /* ----------Navigation---------- */
 /* ------------------------------ */
-li {
-  list-style: none;
-}
-
-a {
-  color: #333;
-  text-decoration: none;
-}
 
 .header {
   display: flex;
@@ -104,7 +105,7 @@ a {
   border: 1px solid #d7d9db;
   border-radius: 1rem;
 
-  padding: 1.2rem 2.4rem;
+  padding: 2.4rem;
 }
 
 .label-color-red {
