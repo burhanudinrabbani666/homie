@@ -27,10 +27,14 @@ function formatedDate(date) {
 
 function renderContact() {
   const contactID = window.location.search.split("=").slice(-1);
+
   const contact = initialData.find(
     (contact) => contact.id === Number(...contactID)
   );
 
+  console.log(initialData);
+  console.log(contactID);
+  console.log(contact);
   renderData(contact);
 }
 
@@ -47,7 +51,7 @@ function renderData(contact) {
   contactPhoneElement.textContent = contact.phone;
   contactEmailElement.textContent = contact.email;
   contactCompanyElement.textContent = contact.company;
-  contactBirthDateElement.textContent = birthDate;
+  contactBirthDateElement.textContent = birthDate || "";
   contactAgeElement.textContent = `${
     new Date().getFullYear() - contact.birthDate.getFullYear()
   } years old`;
