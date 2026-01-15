@@ -12,6 +12,7 @@ import {
   contactProfileElement,
   updatedAtELement,
   contactDetailContainerElement,
+  favoritesBtnElement,
 } from "./dom.js";
 import { formatedDate } from "./model.js";
 
@@ -63,4 +64,10 @@ function renderUpdatedList(contact) {
     (list) =>
       `<li class="contact__updated-item">${formatedDate(list.date)}</li>`
   );
+}
+
+export function renderFavoritesIcon(contact) {
+  favoritesBtnElement.innerHTML = `<ion-icon name="star${contact.favorites ? "" : "-outline"}" style="${contact.favorites ? "color: #FFD700" : ""}"></ion-icon>`;
+
+  return;
 }
