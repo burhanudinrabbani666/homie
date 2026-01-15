@@ -31,3 +31,4 @@ export const favoritesBtnElement = document.querySelector(
 );
 
 export const editBtnElement = document.querySelector(".contact__edit-btn");
+export const deleteBtnElement = document.querySelector(".contact__delete-btn");

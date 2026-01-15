@@ -248,3 +248,9 @@ export function newInitialContact(contact) {
   console.log(initialData);
   return;
 }
+
+export function deleteContact(contactID) {
+  initialData = initialData.filter((contact) => contact.id !== contactID);
+
+  return initialData;
+}
