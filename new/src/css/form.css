@@ -18,6 +18,13 @@
   grid-column: 1 / -1;
   display: flex;
   justify-content: end;
+  gap: 1.2rem;
+}
+
+.form__btn--favorites {
+  padding: 8px 12px;
+  background: none;
+  border: none;
 }
 
 .btn {
