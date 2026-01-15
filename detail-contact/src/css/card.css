@@ -56,6 +56,9 @@ ion-icon {
 
   position: relative;
 }
+.detail__contact--not-found {
+  text-align: center;
+}
 
 .contact__image--background {
   height: 100%;

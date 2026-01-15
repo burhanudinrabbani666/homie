@@ -8,8 +8,6 @@ export function renderLabels(initialData) {
     JSON.parse(labelUnique)
   );
 
-  console.log(labels);
-
   const tagHtml = labels.map((label) => {
     return `
       <li>
