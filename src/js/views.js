@@ -2,8 +2,8 @@ import { contactsAmount, contactsElement, labelsElement } from "./dom.js";
 import { deleteContactFromInitial, isFavorited } from "../../data/data.js";
 import { getContactsFromLocalStorage } from "../../data/storage.js";
 
-export function renderLabels(initialData) {
-  const labelsArray = initialData.flatMap((contact) => contact.labels);
+export function renderLabels(contacts) {
+  const labelsArray = contacts.flatMap((contact) => contact.labels);
   const labelJson = new Set(labelsArray.map((label) => JSON.stringify(label)));
   const labels = Array.from(labelJson).map((labelUnique) =>
     JSON.parse(labelUnique)
@@ -12,7 +12,7 @@ export function renderLabels(initialData) {
   const tagHtml = labels.map((label) => {
     return `
       <li>
-        <a class="nav__main-item" href="#${label.labelName.toLowerCase()}"
+        <a class="nav__main-item" href="/labels/?label=${label.labelName.toLowerCase()}"
           ><div class="nav__item-color label-color-${label.color}"></div>
           <span class="nav__item-label">${label.labelName.replace(
             label.labelName[0],
