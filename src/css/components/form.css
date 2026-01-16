@@ -112,3 +112,7 @@ input:focus {
 .hidden {
   display: none;
 }
+
+.color__label {
+  padding: 24px;
+}

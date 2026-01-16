@@ -19,16 +19,15 @@ export function addNewContact(event) {
 
   const data = new FormData(formElement);
   const newID = contacts.length + 1;
-
   const newContact = {
     id: newID,
     name: data.get("name").toString().trim(),
-    phone: data.get("phone").toString().trim(),
-    email: data.get("email").toString().trim(),
+    phone: data.get("phone").toString().trim() || null,
+    email: data.get("email").toString().trim() || null,
     labels: [
       {
-        labelName: "family",
-        color: "green",
+        labelName: data.get("labelName").toString().trim(),
+        color: data.get("labelColor").toString().trim(),
       },
     ],
     birthDate: data.get("birthdate") ? new Date(data.get("birthdate")) : null,
@@ -50,6 +49,7 @@ export function addNewContact(event) {
   };
 
   const newContacts = [...contacts, newContact];
+
   setLocalStorage(newContacts);
 
   window.location.href = `/detail-contact/?id=${newContact.id}`;
