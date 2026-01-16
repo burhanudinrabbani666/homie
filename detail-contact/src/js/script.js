@@ -1,4 +1,4 @@
-import { initialData, deleteContact } from "/src/js/data/data.js";
+import { initialData, deleteContactFromInitial } from "/src/js/data/data.js";
 import { renderData, renderFavoritesIcon } from "./views.js";
 import {
   favoritesBtnElement,
@@ -20,12 +20,10 @@ function renderContact() {
   deleteBtnElement.addEventListener("click", (event) => {
     event.preventDefault();
 
-    const newIntialData = deleteContact(contactID);
-    const contact = newIntialData.find((contact) => contact.id === contactID);
+    deleteContactFromInitial(contactID);
+    const contact = initialData.find((contact) => contact.id === contactID);
 
     renderData(contact);
-
-    window.location.reload();
   });
 }
 

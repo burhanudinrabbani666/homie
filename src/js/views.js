@@ -1,5 +1,10 @@
 import { contactsElement, tagsElement } from "./controller.js";
 import { contactsAmount } from "./dom.js";
+import {
+  deleteContactFromInitial,
+  initialData,
+  isFavorited,
+} from "./data/data.js";
 
 export function renderLabels(initialData) {
   const labelsArray = initialData.flatMap((contact) => contact.labels);
@@ -58,10 +63,10 @@ export function renderContact(initialData) {
            }"></ion-icon>
            <span>Favorites</span>
          </button>
-         <button class="menu-item">
+         <a href="/edit-contact/?id=${contact.id}" class="menu-item">
              <ion-icon name="pencil-outline"></ion-icon>
            <span>Edit Contact</span>
-         </button>
+         </a>
          <button class="menu-item delete-btn" data-id=${contact.id}>
            <ion-icon name="trash-outline"></ion-icon>
            <span>Delete</span>
@@ -74,4 +79,63 @@ export function renderContact(initialData) {
 
   contactsAmount.innerHTML = initialData.length;
   contactsElement.innerHTML = html.join("");
+}
+
+export function renderResult(getParams) {
+  const resultSearch = initialData.filter((contact) =>
+    contact.name.toLowerCase().includes(getParams.toLowerCase())
+  );
+
+  renderContact(resultSearch);
+  return;
+}
+
+export function renderContactByLabels() {
+  const labelToRender = window.location.hash.slice(1);
+
+  // Render Favorites
+  if (labelToRender === "favorites") {
+    const favoritedContact = initialData.filter(
+      (contact) => contact.favorites === true
+    );
+
+    renderContact(favoritedContact);
+    return;
+  }
+
+  // Render Contact By tag
+  const contactToRender = initialData.filter((contact) =>
+    contact.labels.map((label) => label.labelName).includes(labelToRender)
+  );
+  if (contactToRender.length === 0) return alert("no contact with this label");
+
+  renderContact(contactToRender);
+  return;
+}
+
+export function menuBtn() {
+  const menuBtn = event.target.closest(".menu-btn");
+  const deleteBtn = event.target.closest(".delete-btn");
+  const favoriteBtn = event.target.closest(".favorite-btn");
+
+  if (menuBtn) {
+    const menuElement = document.querySelector(`.menu-${menuBtn.dataset.id}`);
+    menuElement.classList.toggle("hidden");
+  }
+
+  if (deleteBtn) {
+    const dataId = Number(deleteBtn.dataset.id);
+    const newInitialData = deleteContactFromInitial(dataId);
+    renderContact(newInitialData);
+    return;
+  }
+
+  if (favoriteBtn) {
+    const dataId = Number(favoriteBtn.dataset.id);
+    const newIntialData = isFavorited(dataId);
+
+    console.log(newIntialData);
+    renderContact(newIntialData);
+    return;
+  }
 }

@@ -1,0 +1,19 @@
+.btn {
+  max-width: max-content;
+  padding: 8px 12px;
+  border: none;
+  background-color: #2187af;
+  color: #fff;
+  border-radius: 4px;
+
+  font-size: inherit;
+  font-weight: 600;
+
+  transition: all 0.4s ease;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #175f7b;
+  cursor: pointer;
+}

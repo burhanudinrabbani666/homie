@@ -7,7 +7,7 @@
   max-width: 50%;
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
+  gap: 1rem;
 
   position: relative;
 
@@ -25,18 +25,6 @@
   padding: 8px 12px;
   background: none;
   border: none;
-}
-
-.btn {
-  max-width: max-content;
-  padding: 8px 12px;
-  border: none;
-  background-color: #2187af;
-  color: #fff;
-  border-radius: 4px;
-
-  font-size: inherit;
-  font-weight: 600;
 }
 
 .form__fields {
@@ -86,5 +74,5 @@ input:focus {
 
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
+  gap: 1rem;
 }

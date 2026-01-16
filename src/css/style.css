@@ -84,7 +84,7 @@ a {
 .app {
   max-width: 140rem;
   height: 92vh;
-  padding: 1.2 rem;
+  /* padding: 1.2rem; */
   margin: auto;
 
   display: grid;
@@ -121,10 +121,6 @@ a {
 /* ------------------------------ */
 /* ----------Contact List-------- */
 /* ------------------------------ */
-
-.main {
-  padding: 5rem 2.4rem 1rem;
-}
 
 .main__head {
   display: flex;
@@ -164,6 +160,8 @@ a {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+  padding-top: 2.4rem;
 }
 
 .main__search-fields {

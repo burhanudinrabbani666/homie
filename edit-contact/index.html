@@ -1,45 +1,217 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homie</title>
-    <link rel="stylesheet" href="./src/css/style.css" />
-    <link rel="stylesheet" href="./src/css/card.css" />
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <link rel="stylesheet" href="../new/src/css/form.css" />
+    <link rel="stylesheet" href="/src/css/components/navigation.css" />
+    <link rel="stylesheet" href="/src/css/components/button.css" />
   </head>
   <body>
     <div class="app">
-      <header class="header flex-col">
-        <nav class="nav__main flex-col">
-          <h1>
-            <a href="/">HOMIE</a>
-          </h1>
+      <header class="header">
+        <h1>
+          <a href="/">HOMIE</a>
+        </h1>
+        <nav class="nav__main">
           <ul class="nav__main-list flex-col">
             <li>
-              <a class="nav__main-item add-contact" href="#">
+              <a
+                class="nav__main-item add-contact add-contact-new"
+                href="/new/index.html"
+              >
                 <ion-icon name="add-outline"></ion-icon>
                 <p class="main-item-text">Add Contact</p></a
               >
             </li>
-            <div class="nav__main-non-add flex-col">
-              <li>
-                <a class="nav__main-item" href="#favorites">
-                  <ion-icon name="star-outline"></ion-icon>
-                  <p class="main-item-text">Favorites</p>
-                </a>
-              </li>
-              <li>
-                <a class="nav__main-item" href="#">
-                  <ion-icon name="trash-outline"></ion-icon>
-                  <p class="main-item-text">Trash</p>
-                </a>
-              </li>
-            </div>
+            <li>
+              <a class="nav__main-item" href="#favorites">
+                <ion-icon name="star-outline"></ion-icon>
+                <p class="nav__main-item-text">Favorites</p>
+              </a>
+            </li>
+            <li>
+              <a class="nav__main-item" href="#">
+                <ion-icon name="trash-outline"></ion-icon>
+                <p class="nav__main-item-text">Trash</p>
+              </a>
+            </li>
           </ul>
         </nav>
       </header>
 
-      <main class="main"></main>
+      <main class="main">
+        <div class="form__container">
+          <form method="post" class="form">
+            <div class="form__btn-container">
+              <span class="form__btn--favorites">
+                <ion-icon name="star-outline"></ion-icon>
+              </span>
+              <button type="submit" class="btn">Save edit</button>
+            </div>
+
+            <div class="form__fields">
+              <div class="icon-contact">
+                <ion-icon name="person-circle-outline"></ion-icon>
+              </div>
+              <div class="fields">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="full name"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form__fields">
+              <div class="icon-contact">
+                <ion-icon name="call-outline"></ion-icon>
+              </div>
+              <div class="fields">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="phone" />
+              </div>
+            </div>
+
+            <div class="form__fields">
+              <div class="icon-contact">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
+              <div class="fields">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="email"
+                />
+              </div>
+            </div>
+
+            <div class="form__fields">
+              <div class="icon-contact">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
+              <div class="fields">
+                <label for="company">company</label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  placeholder="company"
+                />
+              </div>
+            </div>
+
+            <div class="form__fields">
+              <div class="icon-contact">
+                <ion-icon name="calendar-outline"></ion-icon>
+              </div>
+              <div class="fields">
+                <label for="birthdate">Birthdate</label>
+                <input type="date" id="birthdate" name="birthdate" />
+              </div>
+            </div>
+
+            <div class="form__fields-address-container">
+              <header class="icon-contact">
+                <ion-icon name="map-outline"></ion-icon>
+              </header>
+              <div class="form__fields--address">
+                <div class="fields">
+                  <label for="street">street</label>
+                  <input
+                    type="text"
+                    id="street"
+                    name="street"
+                    placeholder="street"
+                  />
+                </div>
+
+                <div class="fields">
+                  <label for="subdistrict">subdistrict</label>
+                  <input
+                    type="text"
+                    id="subdistrict"
+                    name="subdistrict"
+                    placeholder="subdistrict"
+                  />
+                </div>
+
+                <div class="fields">
+                  <label for="city">city</label>
+                  <input type="text" id="city" name="city" placeholder="city" />
+                </div>
+
+                <div class="fields">
+                  <label for="province">province</label>
+                  <input
+                    type="text"
+                    id="province"
+                    name="province"
+                    placeholder="province"
+                  />
+                </div>
+
+                <div class="fields">
+                  <label for="country">country</label>
+                  <input
+                    type="text"
+                    id="country"
+                    name="country"
+                    placeholder="country"
+                  />
+                </div>
+
+                <div class="fields">
+                  <label for="zipCode">zip code</label>
+                  <input
+                    type="text"
+                    id="zipCode"
+                    name="zipCode"
+                    placeholder="zip code"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="form__fields">
+              <div class="icon-contact">
+                <ion-icon name="image-outline"></ion-icon>
+              </div>
+              <div class="fields">
+                <label for="bgImageLink">background image link</label>
+                <input
+                  type="text"
+                  id="bgImageLink"
+                  name="bgImageLink"
+                  placeholder="background image link"
+                />
+              </div>
+            </div>
+
+            <div class="form__fields">
+              <div class="icon-contact">
+                <ion-icon name="aperture-outline"></ion-icon>
+              </div>
+              <div class="fields">
+                <label for="photoProfile">photoProfile</label>
+                <input
+                  type="text"
+                  id="photoProfile"
+                  name="photoProfile"
+                  placeholder="photo profile link"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+      </main>
     </div>
 
     <script
@@ -50,6 +222,6 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
-    <script type="module" src="./src/js/script.js"></script>
+    <script type="module" defer src="./src/js/script.js"></script>
   </body>
 </html>

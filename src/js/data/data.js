@@ -245,12 +245,21 @@ export let initialData = [
 export function newInitialContact(contact) {
   initialData = [...initialData, contact];
 
-  console.log(initialData);
   return;
 }
 
-export function deleteContact(contactID) {
+export function deleteContactFromInitial(contactID) {
   initialData = initialData.filter((contact) => contact.id !== contactID);
+
+  return initialData;
+}
+
+export function isFavorited(dataId) {
+  initialData = initialData.map((contact) =>
+    contact.id === dataId
+      ? { ...contact, favorites: !contact.favorites }
+      : contact
+  );
 
   return initialData;
 }
