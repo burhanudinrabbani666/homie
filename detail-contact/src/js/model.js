@@ -1,5 +1,9 @@
 import { renderFavoritesIcon } from "./views.js";
-import { contactID } from "./script.js";
+import { contactId } from "./script.js";
+import {
+  getContactsFromLocalStorage,
+  setLocalStorage,
+} from "../../../data/storage.js";
 
 export function formatedDate(date) {
   const dateToRender = new Date(date);
@@ -13,13 +17,22 @@ export function formatedDate(date) {
   return dateString;
 }
 
-export function isFavorited(contact) {
-  contact.favorites = !contact.favorites;
-  return renderFavoritesIcon(contact);
+export function isFavorited() {
+  const contacts = getContactsFromLocalStorage();
+  const userContact = contacts.find((contact) => contact.id === contactId);
+
+  userContact.favorites = !userContact.favorites;
+
+  const newContacts = contacts.map((contact) =>
+    contact.id === userContact.id ? userContact : contact
+  );
+
+  setLocalStorage(newContacts);
+  return renderFavoritesIcon(userContact);
 }
 
 export function toEditPage() {
-  window.location.href = `/edit-contact/?id=${contactID}`;
+  window.location.href = `/edit-contact/?id=${contactId}`;
 
   return;
 }

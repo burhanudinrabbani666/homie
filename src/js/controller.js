@@ -11,7 +11,8 @@ import { contactsElement } from "./dom.js";
 
 function app(initialData) {
   const initialContact = JSON.parse(localStorage.getItem("contact"));
-  if (initialContact.length === 0) {
+
+  if (!initialContact || initialContact.length === 0) {
     setLocalStorage(initialData);
   }
 
