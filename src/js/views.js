@@ -1,4 +1,4 @@
-import { contactsAmount, contactsElement, tagsElement } from "./dom.js";
+import { contactsAmount, contactsElement, labelsElement } from "./dom.js";
 import { deleteContactFromInitial, isFavorited } from "../../data/data.js";
 import { getContactsFromLocalStorage } from "../../data/storage.js";
 
@@ -24,7 +24,7 @@ export function renderLabels(initialData) {
     `;
   });
 
-  return (tagsElement.innerHTML = tagHtml.join(""));
+  return (labelsElement.innerHTML = tagHtml.join(""));
 }
 
 export function renderContact(initialData) {

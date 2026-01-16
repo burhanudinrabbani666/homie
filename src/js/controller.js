@@ -1,5 +1,8 @@
 import { initialData } from "../../data/data.js";
-import { setLocalStorage } from "../../data/storage.js";
+import {
+  getContactsFromLocalStorage,
+  setLocalStorage,
+} from "../../data/storage.js";
 import {
   menuBtn,
   renderContact,
@@ -10,7 +13,7 @@ import {
 import { contactsElement } from "./dom.js";
 
 function app(initialData) {
-  const initialContact = JSON.parse(localStorage.getItem("contact"));
+  const initialContact = getContactsFromLocalStorage();
 
   if (!initialContact || initialContact.length === 0) {
     setLocalStorage(initialData);

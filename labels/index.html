@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOMIE</title>
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <link rel="stylesheet" href="/src/css/components/favorites.css" />
+    <link rel="stylesheet" href="/src/css/components/navigation.css" />
+    <link rel="stylesheet" href="/src/css/components/contact-item.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <h1>
+          <a href="/">HOMIE</a>
+        </h1>
+        <nav class="nav__main">
+          <ul class="nav__main-list flex-col">
+            <li>
+              <a class="nav__main-item add-contact" href="./new/index.html">
+                <ion-icon name="add-outline"></ion-icon>
+                <p class="main-item-text">Add Contact</p></a
+              >
+            </li>
+            <li>
+              <a class="nav__main-item" href="#favorites">
+                <ion-icon name="star-outline"></ion-icon>
+                <p class="nav__main-item-text">Favorites</p>
+              </a>
+            </li>
+            <li>
+              <a class="nav__main-item" href="#">
+                <ion-icon name="trash-outline"></ion-icon>
+                <p class="nav__main-item-text">Trash</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="nav__tags-container">
+          <h3>Labels</h3>
+          <ul class="nav__main-list nav__tags flex-col"></ul>
+        </nav>
+      </header>
+
+      <main class="main">
+        <div class="main__head">
+          <p class="secondary--heading">
+            Contact (<span class="main__contact-amount"></span>)
+          </p>
+          <div class="main__search-form">
+            <form method="get" class="form-container">
+              <label for="search" class="label">Search</label>
+              <input
+                type="search"
+                id="search"
+                name="search"
+                class="main__search-fields"
+                placeholder="Search..."
+              />
+              <button>
+                <ion-icon name="search-outline"></ion-icon>
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="main__container">
+          <div class="main__container-title grid-4-col">
+            <p class="contact-name">Name</p>
+            <p class="contact-phone">Phone</p>
+            <p class="contact-email">Email</p>
+            <p class="tags">Labels</p>
+            <p class="menu-btn"></p>
+          </div>
+          <ul class="main__container-contact"></ul>
+        </div>
+      </main>
+    </div>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script type="module" src="./js/script.js"></script>
+  </body>
+</html>
