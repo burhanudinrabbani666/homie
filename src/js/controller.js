@@ -1,4 +1,5 @@
-import { initialData, initialLabels } from "./data/data.js";
+import { initialData } from "../../data/data.js";
+import { setLocalStorage } from "../../data/storage.js";
 import {
   menuBtn,
   renderContact,
@@ -6,7 +7,6 @@ import {
   renderLabels,
   renderResult,
 } from "./views.js";
-import { setLocalStorage } from "./data/storage.js";
 import { contactsElement } from "./dom.js";
 
 function app(initialData) {

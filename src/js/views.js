@@ -1,13 +1,6 @@
 import { contactsAmount, contactsElement, tagsElement } from "./dom.js";
-import {
-  deleteContactFromInitial,
-  initialData,
-  isFavorited,
-} from "./data/data.js";
-import {
-  getContactsFromLocalStorage,
-  setLocalStorage,
-} from "./data/storage.js";
+import { deleteContactFromInitial, isFavorited } from "../../data/data.js";
+import { getContactsFromLocalStorage } from "../../data/storage.js";
 
 export function renderLabels(initialData) {
   const labelsArray = initialData.flatMap((contact) => contact.labels);

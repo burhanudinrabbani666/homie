@@ -28,7 +28,8 @@ export function renderData(contact) {
   const createdAtText = formatedDate(contact.createdAt);
   const address = formatedAddress(contact);
   const updatedAtList = renderUpdatedList(contact).join("");
-  const age = new Date().getFullYear() - contact.birthDate.getFullYear();
+  const age =
+    new Date().getFullYear() - new Date(contact.birthDate).getFullYear();
 
   contactNameElement.textContent = contact.name;
   contactPhoneElement.textContent = contact.phone;

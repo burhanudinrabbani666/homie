@@ -1,15 +1,19 @@
 import { renderFavoritesIcon } from "./views.js";
-import { contact, contactID } from "./script.js";
+import { contactID } from "./script.js";
 
 export function formatedDate(date) {
-  return new Intl.DateTimeFormat("en-US", {
+  const dateToRender = new Date(date);
+
+  const dateString = new Intl.DateTimeFormat("en-US", {
     day: "numeric",
     month: "long",
     year: "numeric",
-  }).format(date);
+  }).format(dateToRender);
+
+  return dateString;
 }
 
-export function isFavorited() {
+export function isFavorited(contact) {
   contact.favorites = !contact.favorites;
   return renderFavoritesIcon(contact);
 }
