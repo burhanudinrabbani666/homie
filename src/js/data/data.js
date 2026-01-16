@@ -260,15 +260,14 @@ export function deleteContactFromInitial(contactId, initialContact) {
 }
 
 export function isFavorited(dataId, initialContact) {
-  const newContacts = initialContact.map((contact) => {});
-
-  initialData = initialData.map((contact) =>
-    contact.id === dataId
+  const newContacts = initialContact.map((contact) => {
+    return contact.id === dataId
       ? { ...contact, favorites: !contact.favorites }
-      : contact
-  );
+      : contact;
+  });
 
-  return initialData;
+  setLocalStorage(newContacts);
+  return newContacts;
 }
 
 export function editContact(newContact) {

@@ -3,3 +3,7 @@ export function setLocalStorage(initialContact) {
 
   return;
 }
+
+export function getContactsFromLocalStorage() {
+  return JSON.parse(localStorage.getItem("contact"));
+}

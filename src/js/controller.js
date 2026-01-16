@@ -10,9 +10,7 @@ import { setLocalStorage } from "./data/storage.js";
 import { contactsElement } from "./dom.js";
 
 function app(initialData) {
-  setLocalStorage(initialData);
   const initialContact = JSON.parse(localStorage.getItem("contact"));
-
   if (initialContact.length === 0) {
     setLocalStorage(initialData);
   }
@@ -29,4 +27,4 @@ function app(initialData) {
   window.addEventListener("hashchange", renderContactByLabels);
 }
 
-app(initialData, initialLabels);
+app(initialData);

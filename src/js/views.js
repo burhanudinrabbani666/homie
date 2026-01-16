@@ -4,7 +4,10 @@ import {
   initialData,
   isFavorited,
 } from "./data/data.js";
-import { setLocalStorage } from "./data/storage.js";
+import {
+  getContactsFromLocalStorage,
+  setLocalStorage,
+} from "./data/storage.js";
 
 export function renderLabels(initialData) {
   const labelsArray = initialData.flatMap((contact) => contact.labels);
@@ -91,11 +94,13 @@ export function renderResult(getParams, initialContact) {
 }
 
 export function renderContactByLabels() {
+  const initialContact = getContactsFromLocalStorage();
+
   const labelToRender = window.location.hash.slice(1);
 
   // Render Favorites
   if (labelToRender === "favorites") {
-    const favoritedContact = initialData.filter(
+    const favoritedContact = initialContact.filter(
       (contact) => contact.favorites === true
     );
 
@@ -104,7 +109,7 @@ export function renderContactByLabels() {
   }
 
   // Render Contact By tag
-  const contactToRender = initialData.filter((contact) =>
+  const contactToRender = initialContact.filter((contact) =>
     contact.labels.map((label) => label.labelName).includes(labelToRender)
   );
   if (contactToRender.length === 0) return alert("no contact with this label");
