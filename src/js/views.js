@@ -1,10 +1,10 @@
-import { contactsElement, tagsElement } from "./controller.js";
-import { contactsAmount } from "./dom.js";
+import { contactsAmount, contactsElement, tagsElement } from "./dom.js";
 import {
   deleteContactFromInitial,
   initialData,
   isFavorited,
 } from "./data/data.js";
+import { setLocalStorage } from "./data/storage.js";
 
 export function renderLabels(initialData) {
   const labelsArray = initialData.flatMap((contact) => contact.labels);
@@ -48,7 +48,7 @@ export function renderContact(initialData) {
           .join("")}
        </div>
        <button class="menu-btn" data-id=${contact.id}>
-       <ion-icon name="grid-outline"></ion-icon>
+          <ion-icon name="ellipsis-vertical-sharp"></ion-icon>
        </button>
        <div class="menu hidden menu-${contact.id}" data-id=${contact.id}>
          <a href="/detail-contact/?id=${contact.id}" class="menu-item">
@@ -81,8 +81,8 @@ export function renderContact(initialData) {
   contactsElement.innerHTML = html.join("");
 }
 
-export function renderResult(getParams) {
-  const resultSearch = initialData.filter((contact) =>
+export function renderResult(getParams, initialContact) {
+  const resultSearch = initialContact.filter((contact) =>
     contact.name.toLowerCase().includes(getParams.toLowerCase())
   );
 
@@ -114,6 +114,8 @@ export function renderContactByLabels() {
 }
 
 export function menuBtn() {
+  const initialContact = JSON.parse(localStorage.getItem("contact"));
+
   const menuBtn = event.target.closest(".menu-btn");
   const deleteBtn = event.target.closest(".delete-btn");
   const favoriteBtn = event.target.closest(".favorite-btn");
@@ -125,16 +127,16 @@ export function menuBtn() {
 
   if (deleteBtn) {
     const dataId = Number(deleteBtn.dataset.id);
-    const newInitialData = deleteContactFromInitial(dataId);
-    renderContact(newInitialData);
+    const newContacts = deleteContactFromInitial(dataId, initialContact);
+
+    renderContact(newContacts);
     return;
   }
 
   if (favoriteBtn) {
     const dataId = Number(favoriteBtn.dataset.id);
-    const newIntialData = isFavorited(dataId);
+    const newIntialData = isFavorited(dataId, initialContact);
 
-    console.log(newIntialData);
     renderContact(newIntialData);
     return;
   }

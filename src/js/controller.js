@@ -6,19 +6,23 @@ import {
   renderLabels,
   renderResult,
 } from "./views.js";
+import { setLocalStorage } from "./data/storage.js";
+import { contactsElement } from "./dom.js";
 
-// Dom
-export const tagsElement = document.querySelector(".nav__tags");
-export const contactsElement = document.querySelector(
-  ".main__container-contact"
-);
 function app(initialData) {
-  renderLabels(initialData);
-  renderContact(initialData);
+  setLocalStorage(initialData);
+  const initialContact = JSON.parse(localStorage.getItem("contact"));
+
+  if (initialContact.length === 0) {
+    setLocalStorage(initialData);
+  }
+
+  renderLabels(initialContact);
+  renderContact(initialContact);
 
   const getParams = new URLSearchParams(window.location.search).get("search");
   if (getParams) {
-    renderResult(getParams);
+    renderResult(getParams, initialContact);
   }
 
   contactsElement.addEventListener("click", menuBtn);
