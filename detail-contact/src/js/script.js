@@ -6,14 +6,13 @@ import {
   editBtnElement,
   deleteBtnElement,
 } from "./dom.js";
-import { isFavorited, toEditPage } from "./model.js";
+import { deleteContact, isFavorited, toEditPage } from "./model.js";
 
 const query = window.location.search.split("=").slice(-1);
 export const contactId = Number(...query);
 
 function renderContact() {
   const initialContacts = getContactsFromLocalStorage();
-  console.log(initialContacts);
   const contact = initialContacts.find((contact) => contact.id === contactId);
 
   renderFavoritesIcon(contact);
@@ -21,14 +20,7 @@ function renderContact() {
 
   favoritesBtnElement.addEventListener("click", isFavorited);
   editBtnElement.addEventListener("click", toEditPage);
-  deleteBtnElement.addEventListener("click", (event) => {
-    event.preventDefault();
-
-    deleteContactFromInitial(contactId);
-    const contact = initialContacts.find((contact) => contact.id === contactId);
-
-    renderData(contact);
-  });
+  deleteBtnElement.addEventListener("click", deleteContact);
 }
 
 renderContact();

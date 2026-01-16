@@ -1,4 +1,4 @@
-import { renderFavoritesIcon } from "./views.js";
+import { renderData, renderFavoritesIcon } from "./views.js";
 import { contactId } from "./script.js";
 import {
   getContactsFromLocalStorage,
@@ -34,5 +34,16 @@ export function isFavorited() {
 export function toEditPage() {
   window.location.href = `/edit-contact/?id=${contactId}`;
 
+  return;
+}
+
+export function deleteContact() {
+  const contacts = getContactsFromLocalStorage();
+  const newContacts = contacts.filter((contact) => contact.id !== contactId);
+  const contact = newContacts.find((contact) => contact.id === contactId);
+
+  setLocalStorage(newContacts);
+
+  renderData(contact);
   return;
 }
