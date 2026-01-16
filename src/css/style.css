@@ -111,13 +111,33 @@ a {
 .label-color-red {
   background-color: #ffc9c9;
 }
+
 .label-color-blue {
   background-color: #a5d8ff;
 }
+
 .label-color-green {
   background-color: #b2f2bb;
 }
 
+.label-color-yellow {
+  background-color: #ffec99;
+}
+.label-color-orange {
+  background-color: #ffd8a8;
+}
+
+.label-color-grey {
+  background-color: #e9ecef;
+}
+
+.label-color-purple {
+  background-color: #eebefa;
+}
+
+.label-color-cream {
+  background-color: #fffdd0;
+}
 /* ------------------------------ */
 /* ----------Contact List-------- */
 /* ------------------------------ */
@@ -300,6 +320,8 @@ a {
   background-color: #fff;
   border: 1px solid #d7d9db;
   border-radius: 4px;
+
+  font-size: 1.4rem;
 }
 
 .menu-item:hover,

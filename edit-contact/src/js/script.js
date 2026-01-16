@@ -1,5 +1,5 @@
-import { initialData } from "../../../data/data.js";
 import { getContactsFromLocalStorage } from "../../../data/storage.js";
+import { renderLabels } from "../../../src/js/views.js";
 import { favoritesBtnEditElement, formBtnEditElement } from "./dom.js";
 import { editContactSubmit } from "./model.js";
 import { renderContactToEdit, renderFavoritedEdit } from "./views.js";
@@ -10,11 +10,11 @@ function editContactPages() {
   const query = window.location.search.split("=").splice(-1).join("");
   const contactId = Number(query);
 
-  const contact = contacts.find((contact) => contact.id === contactId);
+  renderLabels(contacts);
 
+  const contact = contacts.find((contact) => contact.id === contactId);
   isFavoritedEdit = contact.favorites;
   renderFavoritedEdit(isFavoritedEdit);
-
   renderContactToEdit(contact);
 
   favoritesBtnEditElement.addEventListener("click", () => {

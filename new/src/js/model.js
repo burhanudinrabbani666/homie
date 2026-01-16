@@ -1,6 +1,9 @@
 import { renderFavorites } from "./views.js";
 import { formElement } from "./dom.js";
-import { initialData, newInitialContact } from "../../../src/js/data/data.js";
+import {
+  getContactsFromLocalStorage,
+  setLocalStorage,
+} from "../../../data/storage.js";
 
 export let favoritesValue = false;
 
@@ -12,8 +15,10 @@ export function isFavorited() {
 export function addNewContact(event) {
   event.preventDefault();
 
+  const contacts = getContactsFromLocalStorage();
+
   const data = new FormData(formElement);
-  const newID = initialData.length + 1;
+  const newID = contacts.length + 1;
 
   const newContact = {
     id: newID,
@@ -44,7 +49,8 @@ export function addNewContact(event) {
     backgroundLink: data.get("bgImageLink").toString().trim() || null,
   };
 
-  newInitialContact(newContact);
+  const newContacts = [...contacts, newContact];
+  setLocalStorage(newContacts);
 
-  return;
+  window.location.href = `/detail-contact/?id=${newContact.id}`;
 }

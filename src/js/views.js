@@ -2,7 +2,7 @@ import { contactsAmount, contactsElement, labelsElement } from "./dom.js";
 import { deleteContactFromInitial, isFavorited } from "../../data/data.js";
 import { getContactsFromLocalStorage } from "../../data/storage.js";
 
-export function renderLabels(contacts) {
+export function renderLabels(contacts, queryLabel) {
   const labelsArray = contacts.flatMap((contact) => contact.labels);
   const labelJson = new Set(labelsArray.map((label) => JSON.stringify(label)));
   const labels = Array.from(labelJson).map((labelUnique) =>
@@ -10,9 +10,12 @@ export function renderLabels(contacts) {
   );
 
   const tagHtml = labels.map((label) => {
+    const labelBackgrounColor =
+      label.labelName === queryLabel ? `label-color-${label.color}` : ``;
+
     return `
       <li>
-        <a class="nav__main-item" href="/labels/?label=${label.labelName.toLowerCase()}"
+        <a class="nav__main-item ${labelBackgrounColor}" href="/labels/?label=${label.labelName.toLowerCase()}"
           ><div class="nav__item-color label-color-${label.color}"></div>
           <span class="nav__item-label">${label.labelName.replace(
             label.labelName[0],
@@ -86,33 +89,17 @@ export function renderResult(getParams, initialContact) {
   return;
 }
 
-export function renderContactByLabels() {
-  const initialContact = getContactsFromLocalStorage();
-
-  const labelToRender = window.location.hash.slice(1);
-
-  // Render Favorites
-  if (labelToRender === "favorites") {
-    const favoritedContact = initialContact.filter(
-      (contact) => contact.favorites === true
-    );
-
-    renderContact(favoritedContact);
-    return;
-  }
-
-  // Render Contact By tag
-  const contactToRender = initialContact.filter((contact) =>
-    contact.labels.map((label) => label.labelName).includes(labelToRender)
+export function renderFavorites(contacts) {
+  const favoritedContact = contacts.filter(
+    (contact) => contact.favorites === true
   );
-  if (contactToRender.length === 0) return alert("no contact with this label");
 
-  renderContact(contactToRender);
+  renderContact(favoritedContact);
   return;
 }
 
 export function menuBtn() {
-  const initialContact = JSON.parse(localStorage.getItem("contact"));
+  const initialContact = getContactsFromLocalStorage();
 
   const menuBtn = event.target.closest(".menu-btn");
   const deleteBtn = event.target.closest(".delete-btn");

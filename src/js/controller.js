@@ -6,29 +6,37 @@ import {
 import {
   menuBtn,
   renderContact,
-  renderContactByLabels,
+  renderFavorites,
   renderLabels,
   renderResult,
 } from "./views.js";
 import { contactsElement } from "./dom.js";
 
 function app(initialData) {
-  const initialContact = getContactsFromLocalStorage();
+  const contacts = getContactsFromLocalStorage();
+  const favorites = window.location.search;
+  renderLabels(contacts);
 
-  if (!initialContact || initialContact.length === 0) {
-    setLocalStorage(initialData);
+  if (favorites === "?favorites") {
+    renderFavorites(contacts);
+
+    return;
   }
 
-  renderLabels(initialContact);
-  renderContact(initialContact);
+  if (!contacts || contacts.length === 0) {
+    setLocalStorage(initialData);
+    window.location.reload();
+  }
+
+  renderContact(contacts);
 
   const getParams = new URLSearchParams(window.location.search).get("search");
   if (getParams) {
-    renderResult(getParams, initialContact);
+    renderResult(getParams, contacts);
   }
 
   contactsElement.addEventListener("click", menuBtn);
-  window.addEventListener("hashchange", renderContactByLabels);
+  window.addEventListener("hashchange", renderFavorites);
 }
 
 app(initialData);

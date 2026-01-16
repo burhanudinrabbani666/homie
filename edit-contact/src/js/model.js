@@ -1,4 +1,3 @@
-import { initialData, editContact } from "../../../data/data.js";
 import {
   getContactsFromLocalStorage,
   setLocalStorage,
