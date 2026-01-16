@@ -1,13 +1,19 @@
-import { initialData, editContact } from "../../../src/js/data/data.js";
+import { initialData, editContact } from "../../../data/data.js";
+import {
+  getContactsFromLocalStorage,
+  setLocalStorage,
+} from "../../../data/storage.js";
 import { formBtnEditElement } from "./dom.js";
 import { isFavoritedEdit } from "./script.js";
 
 export function editContactSubmit(event) {
   event.preventDefault();
 
+  const contacts = getContactsFromLocalStorage();
+
   const query = window.location.search.split("=").splice(-1).join("");
   const contactId = Number(query);
-  const contact = initialData.find((contact) => contact.id === contactId);
+  const contact = contacts.find((contact) => contact.id === contactId);
 
   const data = new FormData(formBtnEditElement);
   const newContact = {
@@ -36,7 +42,10 @@ export function editContactSubmit(event) {
     photoProfileLink: data.get("photoProfile").toString().trim() || null,
     backgroundLink: data.get("bgImageLink").toString().trim() || null,
   };
-  console.log(contactId);
-  editContact(newContact);
+
+  const newContacts = contacts.map((contact) =>
+    contact.id === newContact.id ? newContact : contact
+  );
+  setLocalStorage(newContacts);
   window.location.href = `/detail-contact/?id=${contactId}`;
 }

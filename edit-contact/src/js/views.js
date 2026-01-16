@@ -1,4 +1,3 @@
-import { initialData } from "../../../src/js/data/data.js";
 import {
   nameField,
   phoneField,
@@ -23,9 +22,9 @@ export function renderFavoritedEdit(isFavoritedEdit) {
 }
 
 export function renderContactToEdit(contact) {
-  const formatedDate = `${contact.birthDate.getFullYear()}-${(contact.birthDate.getMonth() + 1).toString().padStart(2, 0)}-${contact.birthDate.getDate().toString().padStart(2, 0)}`;
+  const birthDate = new Date(contact.birthDate);
+  const formatedDate = `${birthDate.getFullYear()}-${(birthDate.getMonth() + 1).toString().padStart(2, 0)}-${birthDate.getDate().toString().padStart(2, 0)}`;
 
-  console.log(formatedDate);
   nameField.value = contact.name;
   phoneField.value = contact.phone;
   emailField.value = contact.email;
