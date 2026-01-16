@@ -16,27 +16,23 @@ function app(initialData) {
   const contacts = getContactsFromLocalStorage();
   const favorites = window.location.search;
   renderLabels(contacts);
-
-  if (favorites === "?favorites") {
-    renderFavorites(contacts);
-
-    return;
-  }
+  renderContact(contacts);
+  contactsElement.addEventListener("click", menuBtn);
 
   if (!contacts || contacts.length === 0) {
     setLocalStorage(initialData);
     window.location.reload();
   }
 
-  renderContact(contacts);
+  if (favorites === "?favorites") {
+    renderFavorites(contacts);
+    return;
+  }
 
   const getParams = new URLSearchParams(window.location.search).get("search");
   if (getParams) {
     renderResult(getParams, contacts);
   }
-
-  contactsElement.addEventListener("click", menuBtn);
-  window.addEventListener("hashchange", renderFavorites);
 }
 
 app(initialData);

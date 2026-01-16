@@ -40,6 +40,11 @@
             </li>
           </ul>
         </nav>
+
+        <nav class="nav__tags-container">
+          <h3>Labels</h3>
+          <ul class="nav__main-list nav__tags flex-col"></ul>
+        </nav>
       </header>
 
       <main class="main">
@@ -199,6 +204,7 @@
               <div class="icon-contact">
                 <ion-icon name="aperture-outline"></ion-icon>
               </div>
+
               <div class="fields">
                 <label for="photoProfile">photoProfile</label>
                 <input
@@ -208,6 +214,39 @@
                   placeholder="photo profile link"
                 />
               </div>
+            </div>
+
+            <div class="form__fields form__fields--label hidden">
+              <div class="icon-contact">
+                <ion-icon name="bookmark-outline"></ion-icon>
+              </div>
+
+              <div class="fields fields-label">
+                <div class="fields">
+                  <label for="labelName">labelName</label>
+                  <input
+                    type="text"
+                    id="labelName"
+                    name="labelName"
+                    placeholder="label name"
+                  />
+                </div>
+
+                <div>
+                  <label for="labelColor">photoProfile</label>
+                  <select
+                    name="labelColor"
+                    id="labelColor"
+                    class="form__color-select"
+                  >
+                    <option value="">Add color</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form__add-label-btn" role="button">
+              &plus; Add new label
             </div>
           </form>
         </div>
