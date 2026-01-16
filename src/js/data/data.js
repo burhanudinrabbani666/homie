@@ -263,3 +263,19 @@ export function isFavorited(dataId) {
 
   return initialData;
 }
+
+export function editContact(newContact) {
+  console.log(
+    `Before edit`,
+    initialData.find((contact) => contact.id === newContact.id)
+  );
+
+  initialData = initialData.map((contact) =>
+    contact.id === newContact.id ? newContact : contact
+  );
+
+  console.log(
+    `After edit`,
+    initialData.find((contact) => contact.id === newContact.id)
+  );
+}

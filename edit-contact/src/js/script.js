@@ -1,48 +1,25 @@
-import { initialData } from "../../../src/js/data/data.js";
-import {
-  nameField,
-  phoneField,
-  emailField,
-  companyField,
-  birthdateField,
-  streetField,
-  subdistrictField,
-  cityField,
-  provinceField,
-  countryField,
-  zipCodeField,
-  bgImageLinkField,
-  photoProfileField,
-  favoritesBtnEditElement,
-} from "./dom.js";
-import { renderFavoritedEdit } from "./views.js";
+import { editContact, initialData } from "../../../src/js/data/data.js";
+import { favoritesBtnEditElement, formBtnEditElement } from "./dom.js";
+import { editContactSubmit } from "./model.js";
+import { renderContactToEdit, renderFavoritedEdit } from "./views.js";
 
-let isFavoritedEdit = false;
-function editContact() {
+export let isFavoritedEdit = false;
+function editContactPages() {
   const query = window.location.search.split("=").splice(-1).join("");
-  const contactID = Number(query);
-  const contact = initialData.find((contact) => contact.id === contactID);
-  const formatedDate = `${contact.birthDate.getFullYear()}-${contact.birthDate.getMonth() + 1}-${contact.birthDate.getDate()}`;
+  const contactId = Number(query);
+  const contact = initialData.find((contact) => contact.id === contactId);
 
-  nameField.value = contact.name;
-  phoneField.value = contact.phone;
-  emailField.value = contact.email;
-  companyField.value = contact.company;
-  birthdateField.value = formatedDate;
-  streetField.value = contact.address.street;
-  subdistrictField.value = contact.address.subdistrict;
-  cityField.value = contact.address.city;
-  provinceField.value = contact.address.province;
-  countryField.value = contact.address.country;
-  zipCodeField.value = contact.address.zipCode;
-  bgImageLinkField.value = contact.backgroundLink;
-  photoProfileField.value = contact.photoProfileLink;
+  isFavoritedEdit = contact.favorites;
+  renderFavoritedEdit(isFavoritedEdit);
+
+  renderContactToEdit(contact);
 
   favoritesBtnEditElement.addEventListener("click", () => {
     isFavoritedEdit = !isFavoritedEdit;
-
     renderFavoritedEdit(isFavoritedEdit);
   });
+
+  formBtnEditElement.addEventListener("submit", editContactSubmit);
 }
 
-editContact();
+editContactPages();
