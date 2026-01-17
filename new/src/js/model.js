@@ -1,9 +1,6 @@
 import { renderFavorites } from "./views.js";
-import { formElement } from "./dom.js";
-import {
-  getContactsFromLocalStorage,
-  setLocalStorage,
-} from "../../../data/storage.js";
+import { formElement, LabelFields } from "./dom.js";
+import { getContactsFromLocalStorage } from "../../../data/storage.js";
 
 export let favoritesValue = false;
 
@@ -16,9 +13,20 @@ export function addNewContact(event) {
   event.preventDefault();
 
   const contacts = getContactsFromLocalStorage();
+  const labelsArray = contacts.flatMap((contact) => contact.labels);
+  const labelJson = new Set(labelsArray.map((label) => JSON.stringify(label)));
+  const labels = Array.from(labelJson).map((labelUnique) =>
+    JSON.parse(labelUnique),
+  );
 
   const data = new FormData(formElement);
   const newID = contacts.length + 1;
+
+  const labelInput = labels.filter(
+    (label) => data.get(`${label.color}-label`) === "on",
+  );
+
+  console.log(labelInput);
   const newContact = {
     id: newID,
     name: data.get("name").toString().trim(),
@@ -26,8 +34,8 @@ export function addNewContact(event) {
     email: data.get("email").toString().trim() || null,
     labels: [
       {
-        labelName: data.get("labelName").toString().trim(),
-        color: data.get("labelColor").toString().trim(),
+        labelName: data.get("labelName").toString().trim() || null,
+        color: data.get("labelColor").toString().trim() || null,
       },
     ],
     birthDate: data.get("birthdate") ? new Date(data.get("birthdate")) : null,
@@ -48,9 +56,9 @@ export function addNewContact(event) {
     backgroundLink: data.get("bgImageLink").toString().trim() || null,
   };
 
-  const newContacts = [...contacts, newContact];
+  // const newContacts = [...contacts, newContact];
 
-  setLocalStorage(newContacts);
+  // setLocalStorage(newContacts);
 
-  window.location.href = `/detail-contact/?id=${newContact.id}`;
+  // window.location.href = `/detail-contact/?id=${newContact.id}`;
 }

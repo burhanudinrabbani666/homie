@@ -116,3 +116,15 @@ input:focus {
 .color__label {
   padding: 24px;
 }
+
+.fields__checkbox {
+  display: inline-block;
+}
+
+.form__input-checkbox {
+  width: max-content;
+}
+
+.form__input-checkbox--label {
+  display: inline-block;
+}
