@@ -19,7 +19,6 @@ function app(initialData) {
     window.location.reload();
   }
 
-  console.log(contacts);
   const favorites = window.location.search;
   renderLabels(contacts);
   renderContact(contacts);

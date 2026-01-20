@@ -13,7 +13,6 @@ import { getLabelfromContacts } from "./modal.js";
 export function renderLabels(contacts, queryLabel) {
   const labels = getLabelfromContacts(contacts);
   const labelFilter = labels.filter((label) => label.labelName !== "");
-  console.log(labelFilter);
 
   const tagHtml = labelFilter.map((label) => {
     const labelBackgrounColor =
@@ -45,13 +44,12 @@ export function renderContact(contacts) {
     return;
   }
 
-  console.log(contacts);
   const html = contacts.map((contact) => {
     return `
      <li class="contact-list grid-4-col">
        <p class="contact-name">${contact.name}</p>
-       <p class="contact-phone"> ${contact.phone}</p>
-       <p class="contact-email">${contact.email}</p>
+       <p class="contact-phone"> ${contact.phone || ""}</p>
+       <p class="contact-email">${contact.email || ""}</p>
        <div class="tags">
         ${contact.labels
           .map((label) => {

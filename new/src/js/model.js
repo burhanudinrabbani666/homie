@@ -36,10 +36,12 @@ export function addNewContact(event) {
     data.get("labelColor") === "" &&
     labelInputCheckBox.length === 0
   ) {
-    labelsInput = {
-      labelName: "",
-      color: "",
-    };
+    labelsInput = [
+      {
+        labelName: "",
+        color: "",
+      },
+    ];
   }
 
   // if user add new label and not adding label by old labels

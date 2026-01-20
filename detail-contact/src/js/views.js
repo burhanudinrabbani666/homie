@@ -39,10 +39,8 @@ export function renderData(contact) {
   contactAgeElement.textContent = contact.birthDate ? `(${age} years old)` : "";
   contactCreatedElement.textContent = createdAtText;
   contactAddressElement.textContent = address || "-";
-  contactBackgroundElement.style.backgroundImage =
-    `url(${contact.backgroundLink})` || "";
-  contactProfileElement.style.backgroundImage =
-    `url(${contact.photoProfileLink})` || "";
+  contactBackgroundElement.style.backgroundImage = `url(${contact.backgroundLink || "https://images.unsplash.com/photo-1596367407372-96cb88503db6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d2hpdGV8ZW58MHx8MHx8fDA%3D"})`;
+  contactProfileElement.style.backgroundImage = `url(${contact.photoProfileLink || "https://images.unsplash.com/photo-1740252117070-7aa2955b25f8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZSUyMGljb258ZW58MHx8MHx8fDI%3D"})`;
 
   contactLabelsElement.innerHTML = labels;
   updatedAtELement.innerHTML = updatedAtList;
