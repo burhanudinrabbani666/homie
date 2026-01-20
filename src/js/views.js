@@ -63,7 +63,7 @@ export function renderContact(contacts) {
           <ion-icon name="ellipsis-vertical-sharp"></ion-icon>
        </button>
        <div class="menu hidden menu-${contact.id}" data-id=${contact.id}>
-         <a href="/detail-contact/?id=${contact.id}" class="menu-item">
+         <a href="/detail-contact/index.html/?id=${contact.id}" class="menu-item">
            <ion-icon name="eye-outline"></ion-icon>
            <span>View Detail</span>
          </a>
@@ -75,7 +75,7 @@ export function renderContact(contacts) {
            }"></ion-icon>
            <span>Favorites</span>
          </button>
-         <a href="/edit-contact/?id=${contact.id}" class="menu-item">
+         <a href="/edit-contact/index.html/?id=${contact.id}" class="menu-item">
              <ion-icon name="pencil-outline"></ion-icon>
            <span>Edit Contact</span>
          </a>

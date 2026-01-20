@@ -9,8 +9,8 @@ Save your friends' contacts easily, quickly, and simply. Homie is a contact stor
 1. View your friends' contacts directly.
 2. See more information about your friends' contacts.
 3. Edit them as you like.
-4. Add labels for easier searching. (coming soon)
-5. Customize your labels. (coming soon)
+4. Add labels for easier searching.
+5. Customize your labels.
 6. Add favorites to your special contacts. Make them a priority.
 7. Search by any keyword within the contact you're looking for.
 8. Don't worry! Deleted contacts aren't lost immediately. Restore them or delete them permanently. (coming soon)
