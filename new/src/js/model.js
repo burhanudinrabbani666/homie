@@ -30,6 +30,19 @@ export function addNewContact(event) {
 
   let labelsInput;
 
+  // user not adding label
+  if (
+    data.get("labelName") === "" &&
+    data.get("labelColor") === "" &&
+    labelInputCheckBox.length === 0
+  ) {
+    labelsInput = {
+      labelName: "",
+      color: "",
+    };
+  }
+
+  // if user add new label and not adding label by old labels
   if (
     data.get("labelName") !== "" &&
     data.get("labelColor") !== "" &&
@@ -38,6 +51,7 @@ export function addNewContact(event) {
     labelsInput = [newLabel];
   }
 
+  // if user adding new label and add old label together
   if (
     data.get("labelName") !== "" &&
     data.get("labelColor") !== "" &&
@@ -46,6 +60,7 @@ export function addNewContact(event) {
     labelsInput = [...labelInputCheckBox, newLabel];
   }
 
+  // if user only add old label
   if (
     (data.get("labelName") === "" || data.get("labelColor") === "") &&
     labelInputCheckBox.length > 0

@@ -12,8 +12,10 @@ import { getLabelfromContacts } from "./modal.js";
 
 export function renderLabels(contacts, queryLabel) {
   const labels = getLabelfromContacts(contacts);
+  const labelFilter = labels.filter((label) => label.labelName !== "");
+  console.log(labelFilter);
 
-  const tagHtml = labels.map((label) => {
+  const tagHtml = labelFilter.map((label) => {
     const labelBackgrounColor =
       label.labelName === queryLabel ? `label-color-${label.color}` : ``;
 
@@ -35,11 +37,15 @@ export function renderLabels(contacts, queryLabel) {
 }
 
 export function renderContact(contacts) {
-  if (!contacts || contacts.length === 0) {
+  const contactsFromLocalStorage = getContactsFromLocalStorage();
+  if (contactsFromLocalStorage.length === 0) {
     setLocalStorage(initialData);
     window.location.reload();
+
+    return;
   }
 
+  console.log(contacts);
   const html = contacts.map((contact) => {
     return `
      <li class="contact-list grid-4-col">
@@ -89,12 +95,12 @@ export function renderContact(contacts) {
   contactsElement.innerHTML = html.join("");
 }
 
-export function renderResult(getParams, initialContact) {
-  const resultSearch = initialContact.filter((contact) =>
+export function renderResult(getParams, contacts) {
+  const searchResults = contacts.filter((contact) =>
     contact.name.toLowerCase().includes(getParams.toLowerCase()),
   );
 
-  renderContact(resultSearch);
+  renderContact(searchResults);
   return;
 }
 

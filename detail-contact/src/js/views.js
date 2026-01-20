@@ -32,15 +32,17 @@ export function renderData(contact) {
     new Date().getFullYear() - new Date(contact.birthDate).getFullYear();
 
   contactNameElement.textContent = contact.name;
-  contactPhoneElement.textContent = contact.phone;
-  contactEmailElement.textContent = contact.email;
-  contactCompanyElement.textContent = contact.company;
-  contactBirthDateElement.textContent = birthDate || "";
-  contactAgeElement.textContent = `${age} years old`;
+  contactPhoneElement.textContent = contact.phone || "-";
+  contactEmailElement.textContent = contact.email || "-";
+  contactCompanyElement.textContent = contact.company || "-";
+  contactBirthDateElement.textContent = birthDate;
+  contactAgeElement.textContent = contact.birthDate ? `(${age} years old)` : "";
   contactCreatedElement.textContent = createdAtText;
-  contactAddressElement.textContent = address;
-  contactBackgroundElement.style.backgroundImage = `url(${contact.backgroundLink})`;
-  contactProfileElement.style.backgroundImage = `url(${contact.photoProfileLink})`;
+  contactAddressElement.textContent = address || "-";
+  contactBackgroundElement.style.backgroundImage =
+    `url(${contact.backgroundLink})` || "";
+  contactProfileElement.style.backgroundImage =
+    `url(${contact.photoProfileLink})` || "";
 
   contactLabelsElement.innerHTML = labels;
   updatedAtELement.innerHTML = updatedAtList;
@@ -57,13 +59,13 @@ function renderLabael(contact) {
 }
 
 function formatedAddress(contact) {
-  return `${contact.address.street}, ${contact.address.subdistrict}, ${contact.address.city}, ${contact.address.province} ${contact.address.zipCode}, ${contact.address.country}`;
+  return `${contact.address.street ? contact.address.street + "," : "-"} ${contact.address.subdistrict ? contact.address.subdistrict + "," : ""} ${contact.address.city ? contact.address.city + "," : ""} ${contact.address.province ? contact.address.province + "," : ""} ${contact.address.zipCode ? contact.address.zipCode + "," : ""} ${contact.address.country ? contact.address.country + "." : ""}`;
 }
 
 function renderUpdatedList(contact) {
   return contact.updatedAt.map(
     (list) =>
-      `<li class="contact__updated-item">${formatedDate(list.date)}</li>`
+      `<li class="contact__updated-item">${formatedDate(list.date)}</li>`,
   );
 }
 

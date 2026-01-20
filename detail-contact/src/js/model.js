@@ -6,6 +6,10 @@ import {
 } from "../../../data/storage.js";
 
 export function formatedDate(date) {
+  if (!date) {
+    return "-";
+  }
+
   const dateToRender = new Date(date);
 
   const dateString = new Intl.DateTimeFormat("en-US", {
@@ -24,7 +28,7 @@ export function isFavorited() {
   userContact.favorites = !userContact.favorites;
 
   const newContacts = contacts.map((contact) =>
-    contact.id === userContact.id ? userContact : contact
+    contact.id === userContact.id ? userContact : contact,
   );
 
   setLocalStorage(newContacts);
