@@ -66,7 +66,6 @@ ion-icon {
 .contact__image--background {
   height: 100%;
 
-  background-image: url(https://images.unsplash.com/photo-1765873360499-3f7459f2ff94?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
   background-size: cover;
   background-position: 50% 50%;
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0 90%);
@@ -77,7 +76,6 @@ ion-icon {
   height: 15rem;
   border-radius: 50%;
 
-  background-image: url(https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
   background-size: cover;
 
   position: absolute;
