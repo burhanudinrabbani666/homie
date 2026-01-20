@@ -250,18 +250,16 @@ export function newInitialContact(contact) {
   return;
 }
 
-export function deleteContactFromInitial(contactId, initialContact) {
-  const newContacts = initialContact.filter(
-    (contact) => contact.id !== contactId
-  );
+export function deleteContactFromInitial(contactId, contacts) {
+  const newContacts = contacts.filter((contact) => contact.id !== contactId);
 
   setLocalStorage(newContacts);
   return newContacts;
 }
 
-export function isFavorited(dataId, initialContact) {
-  const newContacts = initialContact.map((contact) => {
-    return contact.id === dataId
+export function isFavorited(contactId, contacts) {
+  const newContacts = contacts.map((contact) => {
+    return contact.id === contactId
       ? { ...contact, favorites: !contact.favorites }
       : contact;
   });
@@ -273,15 +271,15 @@ export function isFavorited(dataId, initialContact) {
 export function editContact(newContact) {
   console.log(
     `Before edit`,
-    initialData.find((contact) => contact.id === newContact.id)
+    initialData.find((contact) => contact.id === newContact.id),
   );
 
   initialData = initialData.map((contact) =>
-    contact.id === newContact.id ? newContact : contact
+    contact.id === newContact.id ? newContact : contact,
   );
 
   console.log(
     `After edit`,
-    initialData.find((contact) => contact.id === newContact.id)
+    initialData.find((contact) => contact.id === newContact.id),
   );
 }

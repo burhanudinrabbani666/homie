@@ -33,8 +33,8 @@ export function editContactSubmit(event) {
     },
     createdAt: contact.createdAt,
     updatedAt: [
+      { id: contact.updatedAt.at(-1).id + 1, date: new Date() },
       ...contact.updatedAt,
-      { id: contact.updatedAt.length + 1, date: new Date() },
     ],
     deletedAt: null,
     favorites: isFavoritedEdit,
@@ -43,7 +43,7 @@ export function editContactSubmit(event) {
   };
 
   const newContacts = contacts.map((contact) =>
-    contact.id === newContact.id ? newContact : contact
+    contact.id === newContact.id ? newContact : contact,
   );
   setLocalStorage(newContacts);
   window.location.href = `/detail-contact/?id=${contactId}`;
