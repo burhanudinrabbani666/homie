@@ -1,13 +1,10 @@
 import { contactsAmount, contactsElement, labelsElement } from "./dom.js";
 import { deleteContactFromInitial, isFavorited } from "../../data/data.js";
 import { getContactsFromLocalStorage } from "../../data/storage.js";
+import { getLabelfromContacts } from "./modal.js";
 
 export function renderLabels(contacts, queryLabel) {
-  const labelsArray = contacts.flatMap((contact) => contact.labels);
-  const labelJson = new Set(labelsArray.map((label) => JSON.stringify(label)));
-  const labels = Array.from(labelJson).map((labelUnique) =>
-    JSON.parse(labelUnique)
-  );
+  const labels = getLabelfromContacts(contacts);
 
   const tagHtml = labels.map((label) => {
     const labelBackgrounColor =
@@ -19,7 +16,7 @@ export function renderLabels(contacts, queryLabel) {
           ><div class="nav__item-color label-color-${label.color}"></div>
           <span class="nav__item-label">${label.labelName.replace(
             label.labelName[0],
-            label.labelName[0].toUpperCase()
+            label.labelName[0].toUpperCase(),
           )}</span></a
         >
       </li>
@@ -82,7 +79,7 @@ export function renderContact(initialData) {
 
 export function renderResult(getParams, initialContact) {
   const resultSearch = initialContact.filter((contact) =>
-    contact.name.toLowerCase().includes(getParams.toLowerCase())
+    contact.name.toLowerCase().includes(getParams.toLowerCase()),
   );
 
   renderContact(resultSearch);
@@ -91,7 +88,7 @@ export function renderResult(getParams, initialContact) {
 
 export function renderFavorites(contacts) {
   const favoritedContact = contacts.filter(
-    (contact) => contact.favorites === true
+    (contact) => contact.favorites === true,
   );
 
   renderContact(favoritedContact);
@@ -115,14 +112,15 @@ export function menuBtn() {
     const newContacts = deleteContactFromInitial(dataId, initialContact);
 
     renderContact(newContacts);
+    renderLabels(newContacts);
     return;
   }
 
   if (favoriteBtn) {
     const dataId = Number(favoriteBtn.dataset.id);
-    const newIntialData = isFavorited(dataId, initialContact);
+    const newContacts = isFavorited(dataId, initialContact);
 
-    renderContact(newIntialData);
+    renderContact(newContacts);
     return;
   }
 }

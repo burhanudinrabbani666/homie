@@ -14,15 +14,15 @@ import { contactsElement } from "./dom.js";
 
 function app(initialData) {
   const contacts = getContactsFromLocalStorage();
-  const favorites = window.location.search;
-  renderLabels(contacts);
-  renderContact(contacts);
-  contactsElement.addEventListener("click", menuBtn);
-
   if (!contacts || contacts.length === 0) {
     setLocalStorage(initialData);
     window.location.reload();
   }
+
+  const favorites = window.location.search;
+  renderLabels(contacts);
+  renderContact(contacts);
+  contactsElement.addEventListener("click", menuBtn);
 
   if (favorites === "?favorites") {
     renderFavorites(contacts);

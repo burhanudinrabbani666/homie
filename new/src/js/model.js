@@ -1,6 +1,10 @@
 import { renderFavorites } from "./views.js";
-import { formElement, LabelFields } from "./dom.js";
-import { getContactsFromLocalStorage } from "../../../data/storage.js";
+import { formElement } from "./dom.js";
+import {
+  getContactsFromLocalStorage,
+  setLocalStorage,
+} from "../../../data/storage.js";
+import { getLabelfromContacts } from "../../../src/js/modal.js";
 
 export let favoritesValue = false;
 
@@ -13,31 +17,48 @@ export function addNewContact(event) {
   event.preventDefault();
 
   const contacts = getContactsFromLocalStorage();
-  const labelsArray = contacts.flatMap((contact) => contact.labels);
-  const labelJson = new Set(labelsArray.map((label) => JSON.stringify(label)));
-  const labels = Array.from(labelJson).map((labelUnique) =>
-    JSON.parse(labelUnique),
-  );
-
+  const labels = getLabelfromContacts(contacts);
   const data = new FormData(formElement);
-  const newID = contacts.length + 1;
-
-  const labelInput = labels.filter(
-    (label) => data.get(`${label.color}-label`) === "on",
+  const newID = contacts.at(-1).id + 1;
+  const labelInputCheckBox = labels.filter(
+    (label) => data.get(`${label.labelName}`) === "on",
   );
+  const newLabel = {
+    labelName: data.get("labelName").toString().trim().toLowerCase() || null,
+    color: data.get("labelColor").toString().trim().toLowerCase() || null,
+  };
 
-  console.log(labelInput);
+  let labelsInput;
+
+  if (
+    data.get("labelName") !== "" &&
+    data.get("labelColor") !== "" &&
+    labelInputCheckBox.length === 0
+  ) {
+    labelsInput = [newLabel];
+  }
+
+  if (
+    data.get("labelName") !== "" &&
+    data.get("labelColor") !== "" &&
+    labelInputCheckBox.length > 0
+  ) {
+    labelsInput = [...labelInputCheckBox, newLabel];
+  }
+
+  if (
+    (data.get("labelName") === "" || data.get("labelColor") === "") &&
+    labelInputCheckBox.length > 0
+  ) {
+    labelsInput = labelInputCheckBox;
+  }
+
   const newContact = {
     id: newID,
     name: data.get("name").toString().trim(),
     phone: data.get("phone").toString().trim() || null,
     email: data.get("email").toString().trim() || null,
-    labels: [
-      {
-        labelName: data.get("labelName").toString().trim() || null,
-        color: data.get("labelColor").toString().trim() || null,
-      },
-    ],
+    labels: labelsInput,
     birthDate: data.get("birthdate") ? new Date(data.get("birthdate")) : null,
     company: data.get("company").toString().trim() || null,
     address: {
@@ -56,9 +77,7 @@ export function addNewContact(event) {
     backgroundLink: data.get("bgImageLink").toString().trim() || null,
   };
 
-  // const newContacts = [...contacts, newContact];
-
-  // setLocalStorage(newContacts);
-
-  // window.location.href = `/detail-contact/?id=${newContact.id}`;
+  const newContacts = [...contacts, newContact];
+  setLocalStorage(newContacts);
+  window.location.href = `/detail-contact/?id=${newContact.id}`;
 }
