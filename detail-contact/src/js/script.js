@@ -1,4 +1,3 @@
-import { deleteContactFromInitial } from "../../../data/data.js";
 import { getContactsFromLocalStorage } from "../../../data/storage.js";
 import { renderData, renderFavoritesIcon } from "./views.js";
 import {
@@ -7,14 +6,16 @@ import {
   deleteBtnElement,
 } from "./dom.js";
 import { deleteContact, isFavorited, toEditPage } from "./model.js";
+import { renderLabels } from "../../../src/js/views.js";
 
 const query = window.location.search.split("=").slice(-1);
 export const contactId = Number(...query);
 
 function renderContact() {
-  const initialContacts = getContactsFromLocalStorage();
-  const contact = initialContacts.find((contact) => contact.id === contactId);
+  const contacts = getContactsFromLocalStorage();
+  const contact = contacts.find((contact) => contact.id === contactId);
 
+  renderLabels(contacts);
   renderFavoritesIcon(contact);
   renderData(contact);
 
