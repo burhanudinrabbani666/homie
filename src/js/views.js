@@ -113,16 +113,26 @@ export function renderFavorites(contacts) {
   return;
 }
 
+let menuBtnBefore = 0;
+
 export function menuBtn() {
   const contacts = getContactsFromLocalStorage();
-
   const menuBtn = event.target.closest(".menu-btn");
   const deleteBtn = event.target.closest(".delete-btn");
   const favoriteBtn = event.target.closest(".favorite-btn");
 
+  if (menuBtnBefore) {
+    const menuElemenetBefore = document.querySelector(`.menu-${menuBtnBefore}`);
+    if (!menuElemenetBefore) return;
+
+    menuElemenetBefore.classList.add("hidden");
+  }
+
   if (menuBtn) {
     const menuElement = document.querySelector(`.menu-${menuBtn.dataset.id}`);
     menuElement.classList.toggle("hidden");
+
+    menuBtnBefore = menuBtn.dataset.id;
   }
 
   if (deleteBtn) {
