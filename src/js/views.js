@@ -121,7 +121,7 @@ export function menuBtn() {
   const deleteBtn = event.target.closest(".delete-btn");
   const favoriteBtn = event.target.closest(".favorite-btn");
 
-  if (menuBtnBefore) {
+  if (menuBtnBefore && menuBtnBefore !== menuBtn.dataset.id) {
     const menuElemenetBefore = document.querySelector(`.menu-${menuBtnBefore}`);
     if (!menuElemenetBefore) return;
 
