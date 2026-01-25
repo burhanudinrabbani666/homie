@@ -60,9 +60,9 @@ export function renderContact(contacts) {
           .join("")}
        </div>
        <div class="menu-btn-container">
-       <button class="menu-btn" data-id=${contact.id} name="menu-btn-${contact.name}">
-       <ion-icon name="ellipsis-vertical-sharp"></ion-icon>
-       </button>
+        <button class="menu-btn" data-id=${contact.id} name="menu-btn-${contact.name}">
+          <ion-icon name="ellipsis-vertical-sharp"></ion-icon>
+        </button>
        </div>
        <div class="menu hidden menu-${contact.id}" data-id=${contact.id}>
          <a href="/detail-contact/?id=${contact.id}" class="menu-item">
@@ -71,19 +71,20 @@ export function renderContact(contacts) {
          </a>
          <button class="menu-item favorite-btn ${
            contact.favorites ? "favorites" : ""
-         }" data-id=${contact.id} name="favorites-btn-${contact.name}>
-           <ion-icon name="star${
-             contact.favorites ? "" : "-outline"
-           }"></ion-icon>
+         }" data-id=${contact.id} name="favorites-btn-${contact.name}">
+           <ion-icon name="star${contact.favorites ? "" : "-outline"}"></ion-icon>
            <span>Favorites</span>
          </button>
-         <a href="/edit-contact/index.html/?id=${contact.id}" class="menu-item">
-             <ion-icon name="pencil-outline"></ion-icon>
+
+
+         <a href="/edit-contact/?id=${contact.id}" class="menu-item">
+           <ion-icon name="pencil-outline"></ion-icon>
            <span>Edit Contact</span>
          </a>
-         <button class="menu-item delete-btn" data-id=${contact.id} name="trash-btn-${contact.name}>
-           <ion-icon name="trash-outline"></ion-icon>
-           <span>Delete</span>
+
+         <button class="menu-item delete-btn" data-id=${contact.id} name="trash-btn-${contact.name}">
+         <ion-icon name="trash-outline"></ion-icon>
+         <span>Delete</span>
          </button>
        </div>
      </li>
