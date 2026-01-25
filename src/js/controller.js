@@ -10,8 +10,9 @@ import {
   renderLabels,
   renderResult,
 } from "./views.js";
-import { contactsElement } from "./dom.js";
+import { contactsElement, searchFieldsElement } from "./dom.js";
 
+console.log(searchFieldsElement);
 function app(initialData) {
   const contacts = getContactsFromLocalStorage();
   if (!contacts || contacts.length === 0) {
@@ -28,6 +29,15 @@ function app(initialData) {
     renderFavorites(contacts);
     return;
   }
+
+  searchFieldsElement.addEventListener("input", (event) => {
+    const query = event.target.value.toLowerCase().trim();
+    const contactToSearcch = contacts.filter((contact) =>
+      contact.name.toLowerCase().includes(query),
+    );
+
+    renderContact(contactToSearcch);
+  });
 
   const getParams = new URLSearchParams(window.location.search).get("search");
   if (getParams) {

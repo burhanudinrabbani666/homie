@@ -292,14 +292,17 @@ a {
   background-color: #fff;
 }
 
+.menu-btn-container {
+  display: flex;
+  justify-content: end;
+}
+
 .menu-btn {
+  width: max-content;
   padding: 0.8rem 0;
   background: none;
   border: none;
   cursor: pointer;
-
-  display: flex;
-  justify-content: end;
 }
 
 .menu-btn ion-icon {
